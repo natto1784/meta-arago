@@ -10,6 +10,7 @@ IMAGE_INSTALL += "\
     packagegroup-arago-base \
     packagegroup-arago-console \
     packagegroup-arago-base-tisdk \
+    ti-test \
     ${VIRTUAL-RUNTIME_initramfs} \
     "
 
