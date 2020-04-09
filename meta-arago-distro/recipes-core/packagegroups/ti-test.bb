@@ -33,6 +33,15 @@ ARAGO_TEST = "\
     mstpd \
     fio \
     git \
+    parted \
+    dropbear \
+    openssh-sftp-server \
+    kms++ \
+    kms++-python \
+    nbench-byte \
+    arm-benchmarks \
+    stream \
+    can-utils \
 "
 
 ARAGO_TEST_append_armv7a = " \
@@ -86,7 +95,8 @@ TEST_ADDONS = " \
     openntpd \
 "
 
-TEST_ADDONS_TI = ""
+TEST_ADDONS_TI = "switch-config"
+TEST_ADDONS_TI_keystone = ""
 
 #TEST_ADDONS_TI_append_ti43x = " \
 #    cmem-test \
