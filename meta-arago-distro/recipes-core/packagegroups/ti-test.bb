@@ -59,9 +59,9 @@ ARAGO_TI_TEST_append_ti43x = " \
     omapconf \
 "
 
+#    ti-ipc-test
 ARAGO_TI_TEST_append_omap-a15 = " \
     omapconf \
-    ti-ipc-test \
 "
 
 ARAGO_TI_TEST_append_k3 = " \
@@ -72,13 +72,13 @@ ARAGO_TI_TEST_append_j7 = " \
     ufs-utils \
 "
 
-ARAGO_TI_TEST_append_keystone = " \
-    ti-ipc-test \
-"
+#ARAGO_TI_TEST_append_keystone = " \
+#    ti-ipc-test \
+#"
 
-ARAGO_TI_TEST_append_omapl138 = " \
-    ti-ipc-test \
-"
+#ARAGO_TI_TEST_append_omapl138 = " \
+#    ti-ipc-test \
+#"
 
 TEST_ADDONS = " \
     bridge-utils \
@@ -88,29 +88,29 @@ TEST_ADDONS = " \
 
 TEST_ADDONS_TI = ""
 
-TEST_ADDONS_TI_append_ti43x = " \
-    cmem-test \
-"
+#TEST_ADDONS_TI_append_ti43x = " \
+#    cmem-test \
+#"
 
-TEST_ADDONS_TI_append_omap-a15 = " \
-    ${@bb.utils.contains('MACHINE_FEATURES', 'mmip', 'omapdrmtest', '', d)} \
-    cmem-test \
-"
+#TEST_ADDONS_TI_append_omap-a15 = " \
+#    ${@bb.utils.contains('MACHINE_FEATURES', 'mmip', 'omapdrmtest', '', d)} \
+#    cmem-test \
+#"
 
 # Disable ipsecmgr due to libnl and xfrm conflict
 #    ipsecmgr
-TEST_ADDONS_TI_append_keystone = " \
-    mpm-transport-test \
-    multiprocmgr-test \
-    qmss-lld-test \
-    cppi-lld-test \
-    edma3-lld-test \
-    rm-lld \
-    rm-lld-test \
-    traceframework-test \
-    udma-test \
-    cmem-test \
-"
+#TEST_ADDONS_TI_append_keystone = " \
+#    mpm-transport-test \
+#    multiprocmgr-test \
+#    qmss-lld-test \
+#    cppi-lld-test \
+#    edma3-lld-test \
+#    rm-lld \
+#    rm-lld-test \
+#    traceframework-test \
+#    udma-test \
+#    cmem-test \
+#"
 
 # The following are not yet ready for k2g-evm
 #    nwal-lld-test
@@ -125,17 +125,17 @@ TEST_ADDONS_TI_append_keystone = " \
 #    hplib-test
 #    nwal-lld-test
 #    nwal-lld
-TEST_ADDONS_TI_append_k2hk = " \
-    srio-lld-test \
-    ipc-transport-srio-test \
-    ipc-transport-qmss-test \
-    hyplnk-lld-test \
-    mmap-lld-test \
-    aif2-lld-test \
-    pa-lld-test \
-    sa-lld \
-    sa-lld-test \
-"
+#TEST_ADDONS_TI_append_k2hk = " \
+#    srio-lld-test \
+#    ipc-transport-srio-test \
+#    ipc-transport-qmss-test \
+#    hyplnk-lld-test \
+#    mmap-lld-test \
+#    aif2-lld-test \
+#    pa-lld-test \
+#    sa-lld \
+#    sa-lld-test \
+#"
 
 # Disable netapi due to libnl and xfrm conflict
 #    netapi-test
@@ -143,14 +143,14 @@ TEST_ADDONS_TI_append_k2hk = " \
 #    hplib-test
 #    nwal-lld-test
 #    nwal-lld
-TEST_ADDONS_TI_append_k2l = " \
-    dfe-lld-test \
-    iqn2-lld-test \
-    ipc-transport-qmss-test \
-    pa-lld-test \
-    sa-lld \
-    sa-lld-test \
-"
+#TEST_ADDONS_TI_append_k2l = " \
+#    dfe-lld-test \
+#    iqn2-lld-test \
+#    ipc-transport-qmss-test \
+#    pa-lld-test \
+#    sa-lld \
+#    sa-lld-test \
+#"
 
 # Disable netapi due to libnl and xfrm conflict
 #    netapi-test
@@ -158,14 +158,14 @@ TEST_ADDONS_TI_append_k2l = " \
 #    hplib-test
 #    nwal-lld-test
 #    nwal-lld
-TEST_ADDONS_TI_append_k2e = " \
-    mmap-lld-test \
-    hyplnk-lld-test \
-    ipc-transport-qmss-test \
-    pa-lld-test \
-    sa-lld \
-    sa-lld-test \
-"
+#TEST_ADDONS_TI_append_k2e = " \
+#    mmap-lld-test \
+#    hyplnk-lld-test \
+#    ipc-transport-qmss-test \
+#    pa-lld-test \
+#    sa-lld \
+#    sa-lld-test \
+#"
 
 RDEPENDS_${PN} = "\
     ${ARAGO_TEST} \
