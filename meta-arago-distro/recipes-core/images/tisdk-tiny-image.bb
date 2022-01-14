@@ -8,6 +8,8 @@ IMAGE_FSTYPES += "cpio cpio.xz"
 
 ARAGO_TINY_IMAGE_EXTRA_INSTALL ?= ""
 
+ARAGO_TINY_IMAGE_EXTRA_INSTALL_am62xx-evm = "tifs-lpm-stub"
+
 IMAGE_INSTALL = " \
 	packagegroup-arago-sysvinit-boot \
 	${ARAGO_TINY_IMAGE_EXTRA_INSTALL} \

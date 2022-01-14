@@ -43,6 +43,10 @@ ARAGO_EXTRA_append_keystone = "\
     k2-fw-initrd \
 "
 
+ARAGO_EXRA_append_am62xx-evm = "\
+    lpm-demo \
+"
+
 # minimal set of packages - needed to boot
 RDEPENDS_${PN} = "\
     ${@bb.utils.contains('DISTRO_FEATURES', 'zeroconf', 'packagegroup-base-zeroconf', '',d)} \
