@@ -43,7 +43,7 @@ ARAGO_EXTRA_append_keystone = "\
     k2-fw-initrd \
 "
 
-ARAGO_EXRA_append_am62xx-evm = "\
+ARAGO_EXTRA_append_am62xx-evm = "\
     lpm-demo \
 "
 
