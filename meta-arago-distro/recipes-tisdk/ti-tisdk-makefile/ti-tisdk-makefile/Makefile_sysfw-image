@@ -40,7 +40,7 @@ SYSFW_MAKEARGS = $(SYSFW_MAKEARGS_common) $(SYSFW_MAKEARGS_$(PLATFORM_TYPE))
 SBL_PATH = $(TI_SDK_PATH)/board-support/u-boot_build/r5/spl/u-boot-spl.bin
 
 # Depend on linux-dtbs for the dtc utility
-sysfw-image: linux-dtbs
+sysfw-image: linux-dtbs u-boot-r5
 	@echo =============================
 	@echo    Building SYSFW Image
 	@echo =============================
