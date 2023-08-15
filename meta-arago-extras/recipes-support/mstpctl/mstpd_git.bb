@@ -17,7 +17,7 @@ RDEPENDS:${PN} = "python3-core"
 
 inherit autotools
 
-EXTRA_OECONF = "--sbindir=/sbin"
+EXTRA_OECONF = "--sbindir=${base_sbindir}"
 
 do_configure:prepend() {
 	 sed -i -e "s,#!.*python.*,#!${USRBINPATH}/env python3," ${S}/utils/ifquery
