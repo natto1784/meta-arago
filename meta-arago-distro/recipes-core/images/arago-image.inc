@@ -11,7 +11,6 @@ EXTRA_IMAGECMD:ext2.gz += "-i 4096"
 
 IMAGE_INSTALL = " \
 	packagegroup-core-boot \
-	${VIRTUAL-RUNTIME_initramfs} \
 	${CORE_IMAGE_EXTRA_INSTALL} \
 "
 
