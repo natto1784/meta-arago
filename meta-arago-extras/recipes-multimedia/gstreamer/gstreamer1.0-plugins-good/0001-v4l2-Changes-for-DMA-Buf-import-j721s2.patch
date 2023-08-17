@@ -1,4 +1,4 @@
-From 6b01fbb7785a0c950d7b4b0a3767aa35c9f7e60f Mon Sep 17 00:00:00 2001
+From b9727b08f69649a2ec58055b4fb1d40c094ba8d0 Mon Sep 17 00:00:00 2001
 From: Prasanth Babu Mantena <p-mantena@ti.com>
 Date: Wed, 7 Jun 2023 18:24:55 +0530
 Subject: [PATCH] v4l2: Changes for DMA Buf import j721s2
@@ -6,15 +6,17 @@ Subject: [PATCH] v4l2: Changes for DMA Buf import j721s2
 Add checks to release the buffer to downstream pool when returned with
 error flag from the driver. This buffer which registered with driver is
 used a an offset buffer without any new allocation in downstram pool.
-Set buffer offset to ref_frames plus 3.
+Set buffer offset to ref_frames plus 3. Added check for buffer
+allocations that are applied only for wave5 driver. v4l2src which uses
+the buffer pool objects uses the default allocations.
 
 Signed-off-by: Prasanth Babu Mantena <p-mantena@ti.com>
 ---
  sys/v4l2/gstv4l2bufferpool.c | 17 ++++++++++++++---
  sys/v4l2/gstv4l2bufferpool.h |  2 ++
- sys/v4l2/gstv4l2object.c     |  4 ++--
+ sys/v4l2/gstv4l2object.c     | 15 ++++++++++++---
  sys/v4l2/gstv4l2videodec.c   | 20 ++++++++++++++------
- 4 files changed, 32 insertions(+), 11 deletions(-)
+ 4 files changed, 42 insertions(+), 12 deletions(-)
 
 diff --git a/sys/v4l2/gstv4l2bufferpool.c b/sys/v4l2/gstv4l2bufferpool.c
 index d85f036..e6a60dc 100644
@@ -68,24 +70,35 @@ index 60340c2..cec4207 100644
 
  #endif /*__GST_V4L2_BUFFER_POOL_H__ */
 diff --git a/sys/v4l2/gstv4l2object.c b/sys/v4l2/gstv4l2object.c
-index ee60540..0952bb4 100644
+index ee60540..eff1cf2 100644
 --- a/sys/v4l2/gstv4l2object.c
 +++ b/sys/v4l2/gstv4l2object.c
-@@ -5040,7 +5040,7 @@ gst_v4l2_object_decide_allocation (GstV4l2Object * obj, GstQuery * query)
+@@ -5040,7 +5040,11 @@ gst_v4l2_object_decide_allocation (GstV4l2Object * obj, GstQuery * query)
    } else {
      /* In this case we'll have to configure two buffer pool. For our buffer
       * pool, we'll need what the driver one, and one more, so we can dequeu */
 -    own_min = obj->min_buffers + 1;
-+    own_min = obj->min_buffers + 3;
++    if (0 == strcmp(obj->vcap.driver, "wave5-dec")) {
++        own_min = obj->min_buffers + 3;
++    } else {
++        own_min = obj->min_buffers + 1;
++    }
      own_min = MAX (own_min, GST_V4L2_MIN_BUFFERS (obj));
 
      /* for the downstream pool, we keep what downstream wants, though ensure
-@@ -5050,7 +5050,7 @@ gst_v4l2_object_decide_allocation (GstV4l2Object * obj, GstQuery * query)
+@@ -5049,8 +5053,13 @@ gst_v4l2_object_decide_allocation (GstV4l2Object * obj, GstQuery * query)
+     min = MAX (min, GST_V4L2_MIN_BUFFERS (obj));
 
      /* To import we need the other pool to hold at least own_min */
-     if (obj_pool == pool)
+-    if (obj_pool == pool)
 -      min += own_min;
-+      min = own_min;
++    if (obj_pool == pool) {
++        if (0 == strcmp(obj->vcap.driver, "wave5-dec")) {
++            min = own_min;
++        } else {
++            min += own_min;
++        }
++    }
    }
 
    /* Request a bigger max, if one was suggested but it's too small */
