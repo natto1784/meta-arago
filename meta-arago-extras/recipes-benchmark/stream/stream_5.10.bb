@@ -16,8 +16,7 @@ S = "${WORKDIR}/git"
 PACKAGES =+ "${PN}-openmp"
 
 do_compile() {
-	# build the release version
-	oe_runmake
+	oe_runmake CC="${CC}"
 }
 
 do_install() {
