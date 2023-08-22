@@ -47,6 +47,6 @@ UTILS:append:k3 = " \
     k3conf \
 "
 
-RDEPENDS_${PN} = "\
+RDEPENDS:${PN} = "\
     ${UTILS} \
 "
