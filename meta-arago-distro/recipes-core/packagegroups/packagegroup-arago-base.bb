@@ -1,4 +1,4 @@
-DESCRIPTION = "Basic task to get a device booting"
+SUMMARY = "Base tools that are recommended for most images"
 LICENSE = "MIT"
 PR = "r9"
 
