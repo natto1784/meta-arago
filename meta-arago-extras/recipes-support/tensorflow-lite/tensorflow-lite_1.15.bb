@@ -24,6 +24,8 @@ SRC_URI = "git://github.com/tensorflow/tensorflow.git;branch=r${PV};rev=590d6eef
     file://tflite-benchmark.sh \
     file://tensorflow-lite.pc.in"
 
+SRCREV_FORMAT="tensorflow_gemmlowp_googletest_abseil-cpp_ARM_NEON_2_x86_SSE_farmhash_flatbuffers"
+
 SRC_URI[mobilenet_v1_quant.md5sum] = "36af340c00e60291931cb30ce32d4e86"
 SRC_URI[mobilenet_v1_quant.sha256sum] = "d32432d28673a936b2d6281ab0600c71cf7226dfe4cdcef3012555f691744166"
 
