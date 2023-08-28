@@ -12,7 +12,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=a873c5645c184d51e0f9b34e1d7cf559"
 
 SRCREV = "bf9eb67ab9371755c6bcece13cadc7693bcbf264"
 
-SRC_URI = "git://github.com/google/flatbuffers.git"
+SRC_URI = "git://github.com/google/flatbuffers.git;protocol=https;branch=master"
 
 # Make sure C++11 is used, required for example for GCC 4.9
 CXXFLAGS += "-std=c++11"
