@@ -14,7 +14,7 @@ PE = "1"
 PR = "r7"
 PV:append = "+git${SRCPV}"
 
-SRCREV = "15ce79d02abeb2d5b3cd6a741d4fbdf59566fb56"
+SRCREV = "b1b56823b8f6021587887aab2ce58ea8f467b8ec"
 BRANCH ?= "master"
 
 SRC_URI:remove = "git://github.com/linux-test-project/ltp.git;branch=master;protocol=https"
