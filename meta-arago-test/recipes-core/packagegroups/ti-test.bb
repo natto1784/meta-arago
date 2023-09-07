@@ -5,7 +5,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 
-ARAGO_TEST = "\
+TI_TEST_BASE = "\
     bonnie++ \
     hdparm \
     iozone3 \
@@ -40,21 +40,21 @@ ARAGO_TEST = "\
     cryptodev-tests \
 "
 
-ARAGO_TEST_EXTRAS = " \
+TI_TEST_EXTRAS = " \
     python3-numpy \
     piglit \
 "
 
-ARAGO_TEST:append:armv7a = " \
+TI_TEST_BASE:append:armv7a = " \
     cpuburn-neon \
 "
 
-ARAGO_TEST:append:armv7ve = " \
+TI_TEST_BASE:append:armv7ve = " \
     cpuburn-neon \
 "
 
 #    timestamping
-ARAGO_TI_TEST = " \
+TI_TEST_TI_TOOLS = " \
     ltp-ddt \
     input-utils \
     cpuloadgen \
@@ -62,17 +62,17 @@ ARAGO_TI_TEST = " \
     arm-benchmarks \
 "
 
-ARAGO_TI_TEST:append:ti33x = " \
+TI_TEST_TI_TOOLS:append:ti33x = " \
     omapconf \
 "
 
-ARAGO_TI_TEST:append:ti43x = " \
+TI_TEST_TI_TOOLS:append:ti43x = " \
     omapconf \
 "
 
 NOT_MAINLINE_MMIP_DEPS = "${@bb.utils.contains('MACHINE_FEATURES', 'mmip', 'omapdrmtest', '', d)}"
 
-ARAGO_TI_TEST:append:omap-a15 = " \
+TI_TEST_TI_TOOLS:append:omap-a15 = " \
     omapconf \
     ${@oe.utils.conditional('ARAGO_BRAND', 'mainline', '', " \
         ti-ipc-test \
@@ -80,31 +80,31 @@ ARAGO_TI_TEST:append:omap-a15 = " \
     ", d)} \
 "
 
-ARAGO_TI_TEST:append:k3 = " \
+TI_TEST_TI_TOOLS:append:k3 = " \
     k3conf \
 "
 
-ARAGO_TI_TEST:append:j721e = " \
+TI_TEST_TI_TOOLS:append:j721e = " \
     ufs-utils \
 "
 
 # Disable due to breakage
 #    viddec-test-app 
-ARAGO_TI_TEST:append:j721e = " \
+TI_TEST_TI_TOOLS:append:j721e = " \
     videnc-test-app \
 "
 
-ARAGO_TI_TEST:append:omapl138 = " \
+TI_TEST_TI_TOOLS:append:omapl138 = " \
     ${@oe.utils.conditional('ARAGO_BRAND', 'mainline', '', 'ti-ipc-test', d)} \
 "
 
 RDEPENDS:${PN} = "\
-    ${ARAGO_TEST} \
-    ${ARAGO_TI_TEST} \
+    ${TI_TEST_BASE} \
+    ${TI_TEST_TI_TOOLS} \
 "
 
 # Package group for things that should only be present in tisdk-default-image
 PACKAGES += " ${PN}-extras"
 RDEPENDS:${PN}-extras = "\
-    ${ARAGO_TEST_EXTRAS} \
+    ${TI_TEST_EXTRAS} \
 "
