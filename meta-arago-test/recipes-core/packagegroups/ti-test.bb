@@ -6,43 +6,43 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup
 
 TI_TEST_BASE = "\
-    bonnie++ \
-    hdparm \
-    iozone3 \
-    lmbench \
-    rt-tests \
-    evtest \
     bc \
-    memtester \
-    libdrm-tests \
+    bonnie++ \
+    bridge-utils \
+    cryptodev-tests \
     dma-heap-tests \
-    powertop \
-    stress \
-    stress-ng \
-    yavta \
-    perf \
-    v4l-utils \
-    smcroute \
-    rwmem \
-    pulseaudio-misc \
-    kernel-selftest \
-    procps \
-    mtd-utils-ubifs-tests \
-    pcitest \
-    mstpd \
+    evtest \
     fio \
     git \
-    bridge-utils \
+    hdparm \
+    iozone3 \
+    kernel-selftest \
+    libdrm-tests \
     linuxptp \
-    openntpd \
+    lmbench \
+    memtester \
+    mstpd \
+    mtd-utils-ubifs-tests \
     nbench-byte \
+    openntpd \
+    pcitest \
+    perf \
+    powertop \
+    procps \
+    pulseaudio-misc \
+    rt-tests \
+    rwmem \
+    smcroute \
     stream \
-    cryptodev-tests \
+    stress \
+    stress-ng \
+    v4l-utils \
+    yavta \
 "
 
 TI_TEST_EXTRAS = " \
-    python3-numpy \
     piglit \
+    python3-numpy \
 "
 
 TI_TEST_BASE:append:armv7a = " \
@@ -55,11 +55,11 @@ TI_TEST_BASE:append:armv7ve = " \
 
 #    timestamping
 TI_TEST_TI_TOOLS = " \
-    ltp-ddt \
-    input-utils \
-    cpuloadgen \
-    uvc-gadget \
     arm-benchmarks \
+    cpuloadgen \
+    input-utils \
+    ltp-ddt \
+    uvc-gadget \
 "
 
 TI_TEST_TI_TOOLS:append:ti33x = " \
@@ -76,7 +76,7 @@ TI_TEST_TI_TOOLS:append:omap-a15 = " \
     omapconf \
     ${@oe.utils.conditional('ARAGO_BRAND', 'mainline', '', " \
         ti-ipc-test \
-	${NOT_MAINLINE_MMIP_DEPS} \
+	    ${NOT_MAINLINE_MMIP_DEPS} \
     ", d)} \
 "
 
