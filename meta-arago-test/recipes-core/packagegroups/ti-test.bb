@@ -6,24 +6,36 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup
 
 TI_TEST_BASE = "\
+    alsa-utils \
     bc \
     bonnie++ \
     bridge-utils \
     cryptodev-tests \
     dma-heap-tests \
+    dosfstools \
+    ethtool \
     evtest \
     fio \
     git \
     hdparm \
+    i2c-tools \
     iozone3 \
+    iproute2-tc \
+    iproute2-devlink \
+    iperf3 \
+    kernel-modules \
     kernel-selftest \
     libdrm-tests \
     linuxptp \
     lmbench \
+    lsof \
     memtester \
     mstpd \
+    mtd-utils \
+    mtd-utils-ubifs \
     mtd-utils-ubifs-tests \
     nbench-byte \
+    netperf \
     openntpd \
     pcitest \
     perf \
@@ -36,6 +48,7 @@ TI_TEST_BASE = "\
     stream \
     stress \
     stress-ng \
+    tcpdump \
     v4l-utils \
     yavta \
 "
@@ -64,16 +77,22 @@ TI_TEST_TI_TOOLS = " \
 
 TI_TEST_TI_TOOLS:append:ti33x = " \
     omapconf \
+    pru-icss \
+    switch-config \
 "
 
 TI_TEST_TI_TOOLS:append:ti43x = " \
     omapconf \
+    pru-icss \
+    switch-config \
 "
 
 NOT_MAINLINE_MMIP_DEPS = "${@bb.utils.contains('MACHINE_FEATURES', 'mmip', 'omapdrmtest', '', d)}"
 
 TI_TEST_TI_TOOLS:append:omap-a15 = " \
     omapconf \
+    pru-icss \
+    switch-config \
     ${@oe.utils.conditional('ARAGO_BRAND', 'mainline', '', " \
         ti-ipc-test \
 	    ${NOT_MAINLINE_MMIP_DEPS} \
@@ -82,15 +101,29 @@ TI_TEST_TI_TOOLS:append:omap-a15 = " \
 
 TI_TEST_TI_TOOLS:append:k3 = " \
     k3conf \
+    switch-config \
+    ti-rtos-firmware \
+    ti-rpmsg-char \
+    ti-rpmsg-char-examples \
 "
 
-TI_TEST_TI_TOOLS:append:j721e = " \
-    ufs-utils \
+TI_TEST_TI_TOOLS:append:am62xx   = " \
+    pru-icss \
+"
+
+TI_TEST_TI_TOOLS:append:am64xx   = " \
+    pru-icss \
+"
+
+TI_TEST_TI_TOOLS:append:am65xx   = " \
+    pru-icss \
 "
 
 # Disable due to breakage
 #    viddec-test-app 
 TI_TEST_TI_TOOLS:append:j721e = " \
+    pru-icss \
+    ufs-utils \
     videnc-test-app \
 "
 
