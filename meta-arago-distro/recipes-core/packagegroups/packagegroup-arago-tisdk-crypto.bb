@@ -12,6 +12,7 @@ CRYPTO_SUPPORT = "\
     openssl-conf \
     openssl-engines \
     cryptodev-module \
+    opensc \
 "
 
 RDEPENDS:${PN} = "\
