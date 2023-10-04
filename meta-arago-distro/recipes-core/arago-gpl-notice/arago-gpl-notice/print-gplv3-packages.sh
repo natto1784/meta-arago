@@ -19,9 +19,9 @@
 
 gplv3_packages=""
 
-# find all files with GPLv3 in them that do not also have RLE
+# find all files with GPL-3.0 in them that do not also have RLE
 # exception listed.
-files=`grep License: /var/lib/opkg/info/*.control | grep -i GPLv3 | grep -v RLE | cut -d: -f1 | sort -u`
+files=`grep License: /var/lib/opkg/info/*.control | grep -i GPL-3.0 | grep -v RLE | cut -d: -f1 | sort -u`
 
 for i in $files
 do
@@ -36,11 +36,11 @@ then
 cat << EOM 2>&1
 ***************************************************************
 ***************************************************************
-NOTICE: This file system contains the following GPLv3 packages:
+NOTICE: This file system contains the following GPL-3.0 packages:
 EOM
     echo -e $gplv3_packages 2>&1
 cat << EOM 2>&1
-If you do not wish to distribute GPLv3 components please remove
+If you do not wish to distribute GPL-3.0 components please remove
 the above packages prior to distribution.  This can be done using
 the opkg remove command.  i.e.:
     opkg remove <package>
