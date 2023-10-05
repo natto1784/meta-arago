@@ -469,7 +469,7 @@ EOF
         package="`cat $i | grep Package: | awk {'print $2'}`"
         version="`cat $i | grep Version: | awk {'print $2'} | cut -f1-2 -d-`"
         long_version="`cat $i | grep Version: | awk {'print $2'}`"
-        license="`cat $i | grep License: | cut -d: -f2 `"
+        license="`cat $i | grep License: | cut -d: -f2 | sed 's/|/or/g' `"
         architecture="`cat $i | grep Architecture: | awk {'print $2'}`"
         sources="`cat $i | grep Source: | cut -d ':' -f2-`"
         location="$package""_""$long_version""_""$architecture"".ipk"
