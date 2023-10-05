@@ -9,6 +9,7 @@ SDKIMAGE_FEATURES = "package-management"
 SDK_PACKAGE_ARCHS += "buildtools-dummy-${SDKPKGSUFFIX}"
 
 inherit toolchain-scripts
+inherit tisdk-sw-manifest
 
 require recipes-core/meta/meta-toolchain.bb
 
@@ -135,6 +136,8 @@ fakeroot archive_sdk() {
 	mkdir -p ${SDKDEPLOYDIR}
 	cd ${SDK_OUTPUT}/${SDKPATH}
 	tar --owner=root --group=root -c . | xz ${SDK_XZ_OPTIONS} > ${SDKDEPLOYDIR}/${TOOLCHAIN_OUTPUTNAME}.${SDK_ARCHIVE_TYPE}
+
+    generate_sw_manifest_toolchain "${SDK_OUTPUT}/${SDKPATH}"
 }
 
 fakeroot create_shar() {
