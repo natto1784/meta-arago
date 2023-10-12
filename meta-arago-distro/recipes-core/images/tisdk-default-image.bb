@@ -15,7 +15,6 @@ SYSTEMD_DEFAULT_TARGET = " \
 IMAGE_INSTALL += "\
     packagegroup-arago-base \
     packagegroup-arago-console \
-    packagegroup-arago-base-tisdk \
     ti-test \
     ti-test-extras \
     ${@bb.utils.contains('DISTRO_FEATURES','opengl','packagegroup-arago-tisdk-graphics','',d)} \

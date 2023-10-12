@@ -41,7 +41,6 @@ OPENCL = " \
 RDEPENDS:${PN} = "\
     packagegroup-arago-base \
     packagegroup-arago-console \
-    packagegroup-arago-base-tisdk \
     ti-test \
     ${@bb.utils.contains('DISTRO_FEATURES','opengl','packagegroup-arago-tisdk-graphics','',d)} \
     ${@bb.utils.contains('DISTRO_FEATURES','opengl','packagegroup-arago-tisdk-gtk','',d)} \
