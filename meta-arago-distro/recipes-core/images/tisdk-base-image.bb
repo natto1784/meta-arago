@@ -12,7 +12,6 @@ ARAGO_BASE_IMAGE_EXTRA_INSTALL ?= ""
 IMAGE_INSTALL += "\
     packagegroup-arago-base \
     packagegroup-arago-console \
-    packagegroup-arago-base-tisdk \
     ${@oe.utils.conditional('ARAGO_BRAND', 'mainline', 'ti-test', '', d)} \
     ${ARAGO_BASE_IMAGE_EXTRA_INSTALL} \
 "

@@ -1,6 +1,6 @@
 SUMMARY = "Base tools that are recommended for most images"
 LICENSE = "MIT"
-PR = "r9"
+PR = "r10"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
@@ -36,6 +36,26 @@ ARAGO_EXTRA = "\
     kms++-python \
     can-utils \
     docker \
+    dbus-broker \
+    expat \
+    glib-2.0 \
+    libxml2 \
+    libpcre \
+    iptables \
+    iperf3 \
+    netperf \
+    arago-gpl-notice \
+    arago-feed-config \
+    nfs-utils-client \
+    cifs-utils \
+    phytool \
+"
+
+OPTEE_PKGS = " \
+    optee-os \
+    optee-client \
+    optee-test \
+    optee-examples \
 "
 
 # minimal set of packages - needed to boot
@@ -44,4 +64,7 @@ RDEPENDS:${PN} = "\
     ${@bb.utils.contains('MACHINE_FEATURES', 'alsa', '${ARAGO_ALSA_BASE}', '',d)} \
     ${ARAGO_BASE} \
     ${ARAGO_EXTRA} \
+    ${@bb.utils.contains_any('OPTEEOUTPUTMACHINE', 'ti', "${OPTEE_PKGS}", "", d)} \
 "
+
+RDEPENDS:${PN}:append:k3 = " ${OPTEE_PKGS}"
