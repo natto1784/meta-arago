@@ -14,9 +14,9 @@ Signed-off-by: Prasanth Babu Mantena <p-mantena@ti.com>
 ---
  sys/v4l2/gstv4l2bufferpool.c | 17 ++++++++++++++---
  sys/v4l2/gstv4l2bufferpool.h |  2 ++
- sys/v4l2/gstv4l2object.c     | 15 ++++++++++++---
+ sys/v4l2/gstv4l2object.c     | 16 +++++++++++++---
  sys/v4l2/gstv4l2videodec.c   | 20 ++++++++++++++------
- 4 files changed, 42 insertions(+), 12 deletions(-)
+ 4 files changed, 43 insertions(+), 12 deletions(-)
 
 diff --git a/sys/v4l2/gstv4l2bufferpool.c b/sys/v4l2/gstv4l2bufferpool.c
 index d85f036..e6a60dc 100644
@@ -86,7 +86,7 @@ index ee60540..eff1cf2 100644
      own_min = MAX (own_min, GST_V4L2_MIN_BUFFERS (obj));
 
      /* for the downstream pool, we keep what downstream wants, though ensure
-@@ -5049,8 +5053,13 @@ gst_v4l2_object_decide_allocation (GstV4l2Object * obj, GstQuery * query)
+@@ -5049,8 +5053,14 @@ gst_v4l2_object_decide_allocation (GstV4l2Object * obj, GstQuery * query)
      min = MAX (min, GST_V4L2_MIN_BUFFERS (obj));
 
      /* To import we need the other pool to hold at least own_min */
@@ -95,6 +95,7 @@ index ee60540..eff1cf2 100644
 +    if (obj_pool == pool) {
 +        if (0 == strcmp(obj->vcap.driver, "wave5-dec")) {
 +            min = own_min;
++            max = min;
 +        } else {
 +            min += own_min;
 +        }
