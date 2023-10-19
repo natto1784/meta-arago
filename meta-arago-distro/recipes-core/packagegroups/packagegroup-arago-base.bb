@@ -17,6 +17,7 @@ ARAGO_BASE = "\
     mtd-utils-ubifs \
     curl \
     initscript-telnetd \
+    systemd-telnetd \
     ethtool \
     thermal-init \
     bash \
