@@ -88,10 +88,6 @@ do_rootfs[depends] += "${@string_set('%s:do_image_complete' % pn for pn in (d.ge
 do_rootfs[depends] += "${@string_set('%s:do_populate_sdk' % pn for pn in (d.getVar("TISDK_TOOLCHAIN") or "").split())}"
 do_rootfs[mcdepends] += "${@string_set('%s:do_populate_sdk' % pn for pn in (d.getVar("TISDK_TOOLCHAIN_K3R5") or "").split())}"
 
-do_rootfs[nostamp] = "1"
-do_rootfs[lockfiles] += "${IMAGE_ROOTFS}.lock"
-do_rootfs[cleandirs] += "${S}"
-
 # Call the cleanup_host_packages to remove packages that should be removed from
 # the host for various reasons.  This may include licensing issues as well.
 OPKG_POSTPROCESS_COMMANDS = "cleanup_host_packages; "
@@ -132,9 +128,6 @@ fakeroot python do_image () {
 
     execute_pre_post_process(d, pre_process_cmds)
 }
-do_image[dirs] = "${TOPDIR}"
-do_image[umask] = "022"
-addtask do_image after do_rootfs before do_build
 
 fakeroot python do_image_complete () {
     from oe.utils import execute_pre_post_process
@@ -143,9 +136,6 @@ fakeroot python do_image_complete () {
 
     execute_pre_post_process(d, post_process_cmds)
 }
-do_image_complete[dirs] = "${TOPDIR}"
-do_image_complete[umask] = "022"
-addtask do_image_complete after do_image before do_build
 
 tisdk_image_setup () {
     set -x
@@ -345,6 +335,3 @@ tisdk_image_cleanup () {
 license_create_manifest() {
     :
 }
-
-EXPORT_FUNCTIONS do_rootfs
-addtask rootfs before do_build after do_install
