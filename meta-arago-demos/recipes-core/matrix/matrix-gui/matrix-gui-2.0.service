@@ -1,6 +1,6 @@
 [Unit]
 Description=Matrix GUI
-After=weston.service
+After=weston.service lighttpd.service
 Requires=weston.service
 Before=graphical.target
 
@@ -12,7 +12,7 @@ IgnoreSIGPIPE=no
 KillMode=process
 GuessMainPID=no
 RemainAfterExit=yes
-ExecStart=/etc/init.d/matrix-gui-2.0 start
+ExecStart=/usr/share/matrix-gui-2.0/matrix-gui-2.0 start
 
 [Install]
 WantedBy=multi-user.target
