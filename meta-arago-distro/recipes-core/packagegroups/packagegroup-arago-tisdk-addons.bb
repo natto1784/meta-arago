@@ -11,7 +11,6 @@ PACKAGES =+ "${PN}-extra"
 UTILS = " \
     gdbserver \
     oprofile \
-    netkit-ftp \
     ptpd \
     strongswan \
     kexec \
