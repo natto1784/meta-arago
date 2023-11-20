@@ -44,8 +44,8 @@ index fc75383..8e59acc 100644
  	exit(0);
  }
  
--static char optstr[] = "acdD:efF:M:P:ps:Cvrw:";
-+static char optstr[] = "acdD:efF:M:P:ps:Cvrw:t";
+-static char optstr[] = "acdD:efF:M:P:ps:Cvrw:o:";
++static char optstr[] = "acdD:efF:M:P:ps:Cvrw:o:t";
  
  int main(int argc, char **argv)
  {
