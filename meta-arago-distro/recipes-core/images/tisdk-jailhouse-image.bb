@@ -2,9 +2,9 @@
 
 require recipes-core/images/tisdk-default-image.bb
 
-COMPATIBLE_MACHINE = "am62xx"
+COMPATIBLE_MACHINE = "am62xx|am62pxx"
 
-IMAGE_INSTALL:append:am62xx = " jailhouse"
+IMAGE_INSTALL += " jailhouse"
 
 export IMAGE_BASENAME = "tisdk-jailhouse-image"
 
