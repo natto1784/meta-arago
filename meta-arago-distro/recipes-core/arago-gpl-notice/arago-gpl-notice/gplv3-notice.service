@@ -3,8 +3,8 @@ Description=Print notice about GPLv3 packages
 
 [Service]
 Type=oneshot
-ExecStart=/etc/init.d/gplv3-notice
-WorkingDirectory=/etc/init.d
+ExecStart=/usr/bin/gplv3-notice
+WorkingDirectory=/usr/bin
 StandardOutput=tty
 
 [Install]
