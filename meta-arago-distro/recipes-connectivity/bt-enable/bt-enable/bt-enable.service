@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/etc/init.d/bt-enable.sh
-WorkingDirectory=/etc/init.d
+ExecStart=/usr/bin/bt-enable.sh
+WorkingDirectory=/usr/bin
 StandardOutput=syslog
 
 [Install]

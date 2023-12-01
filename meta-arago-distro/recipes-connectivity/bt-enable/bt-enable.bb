@@ -21,9 +21,15 @@ SYSTEMD_SERVICE:${PN} = "bt-enable.service"
 RDEPENDS:${PN} += "bash"
 
 do_install () {
-	install -d ${D}${sysconfdir}/init.d
-	install -m 0755 bt-enable.sh ${D}${sysconfdir}/init.d/
+	if ${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', 'true', 'false', d)}; then
+		install -d ${D}${sysconfdir}/init.d
+		install -m 0755 bt-enable.sh ${D}${sysconfdir}/init.d/
+	fi
 
-	install -d ${D}${systemd_system_unitdir}
-	install -m0644 bt-enable.service ${D}${systemd_system_unitdir}
+	if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
+		install -d ${D}${bindir}
+		install -d ${D}${systemd_system_unitdir}
+		install -m 0755 bt-enable.sh ${D}${bindir}
+		install -m 0644 bt-enable.service ${D}${systemd_system_unitdir}
+	fi
 }
