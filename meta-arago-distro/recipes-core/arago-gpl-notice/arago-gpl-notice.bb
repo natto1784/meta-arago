@@ -15,11 +15,17 @@ SRC_URI = " file://print-gplv3-packages.sh \
             file://gplv3-notice.service"
 
 do_install(){
-	install -d ${D}${sysconfdir}/init.d
-	install -m 0755 ${S}/print-gplv3-packages.sh ${D}${sysconfdir}/init.d/gplv3-notice
+	if ${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', 'true', 'false', d)}; then
+		install -d ${D}${sysconfdir}/init.d
+		install -m 0755 ${S}/print-gplv3-packages.sh ${D}${sysconfdir}/init.d/gplv3-notice
+	fi
 
-	install -d ${D}${systemd_system_unitdir}
-	install -m0644 ${WORKDIR}/gplv3-notice.service ${D}${systemd_system_unitdir}
+	if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
+		install -d ${D}${bindir}
+		install -d ${D}${systemd_system_unitdir}
+		install -m 0755 ${S}/print-gplv3-packages.sh ${D}${bindir}/gplv3-notice
+		install -m 0644 ${WORKDIR}/gplv3-notice.service ${D}${systemd_system_unitdir}
+	fi
 }
 
 SYSTEMD_SERVICE:${PN} = "gplv3-notice.service"
