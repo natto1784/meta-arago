@@ -21,7 +21,6 @@ SRC_URI += "\
     file://0001-deform-Fix-how-controls-are-shown.patch \
     file://0001-qtbase-plugins-platforms-eglfs_kms-fix-compiler-erro.patch \
     file://0001-eglfs-Force-888-format-only-on-env-flag.patch \
-    file://0027-xkb-fix-build-with-libxkbcommon-1.6.0-and-later.patch \
 "
 
 python do_patch:append() {
