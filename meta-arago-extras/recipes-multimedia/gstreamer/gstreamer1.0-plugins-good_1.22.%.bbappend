@@ -20,4 +20,8 @@ SRC_URI:append:am62axx = " \
     file://0002-v4l2-Give-preference-to-contiguous-format-if-support.patch \
 "
 
+SRC_URI:append:am62pxx = " \
+    file://0001-v4l2-Changes-for-DMA-Buf-import-j721s2.patch \
+    file://0002-v4l2-Give-preference-to-contiguous-format-if-support.patch \
+"
 PR:append = ".arago0"
