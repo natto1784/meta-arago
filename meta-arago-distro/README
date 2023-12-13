@@ -1,34 +1,34 @@
 meta-arago-distro provides Arago distribution configuration for TI SDK products
 
-This layer works with the latest Yocto Project release (currently 2.2+) and tracks
-the stable/maintenance branches (currently "master") of the corresponding layers:
+This layer works with the latest Yocto Project release (currently 4.0) and tracks
+the stable/maintenance branches (currently "kirkstone") of the corresponding layers:
 
 URI: git://git.openembedded.org/openembedded-core
-branch: master
+branch: kirkstone
 revision: HEAD
 layers: meta
 
 URI: git://git.yoctoproject.org/meta-ti
-branch: master
+branch: kirkstone
 revision: HEAD
 layers: meta-ti-bsp, meta-ti-extras
 
 URI: git://git.yoctoproject.org/meta-arm
-branch: master
+branch: kirkstone
 revision: HEAD
 layers: meta-arm, meta-arm-toolchain
 
 URI: git://git.openembedded.org/meta-openembedded
-branch: master
+branch: kirkstone
 revision: HEAD
 layers: meta-oe, meta-networking, meta-python
 
 URI: https://github.com/meta-qt5/meta-qt5
-branch: master
+branch: kirkstone
 revision: HEAD
 
 URI: git://git.yoctoproject.org/meta-arago
-branch: master
+branch: kirkstone
 revision: HEAD
 layers: meta-arago-extras
 
