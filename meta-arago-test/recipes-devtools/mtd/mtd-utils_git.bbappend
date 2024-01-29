@@ -1,4 +1,10 @@
-PR:append = ".arago1"
+PR:append = ".arago2"
+
+SRC_URI:remove = "git://git.infradead.org/mtd-utils.git;branch=master \
+"
+
+SRC_URI:prepend = "git://git.infraroot.at/mtd-utils.git;branch=master;protocol=https \
+"
 
 BBCLASSEXTEND += "nativesdk"
 
