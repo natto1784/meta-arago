@@ -9,6 +9,7 @@ inherit packagegroup
 RDEPENDS:${PN} = "\
     libegl-dev \
     libdrm-dev \
+    libgles3-mesa-dev \
     wayland-dev \
     weston-dev \
     ${@bb.utils.contains('MACHINE_FEATURES', 'gc320', 'ti-gc320-libs-dev', '', d)} \
