@@ -12,6 +12,10 @@ SRC_URI:append = " \
     file://60-usb.network \
     file://sync-clocks.service \
     file://timesyncd.conf \
+    file://37-can-j7.rules \
+    file://37-can-am62.rules \
+    file://37-can-dra7.rules \
+    file://37-can-ti33x.rules \
 "
 
 do_install:append() {
@@ -42,4 +46,17 @@ do_install:append() {
 
     install -d ${D}${sysconfdir}/systemd/
     install -m 0644 ${WORKDIR}/timesyncd.conf ${D}${sysconfdir}/systemd/
+
+    install -d ${D}${libdir}/udev/rules.d
+    install -m 0644 ${WORKDIR}/37-can-j7.rules ${D}${libdir}/udev/rules.d/
+    install -m 0644 ${WORKDIR}/37-can-am62.rules ${D}${libdir}/udev/rules.d/
+    install -m 0644 ${WORKDIR}/37-can-dra7.rules ${D}${libdir}/udev/rules.d/
+    install -m 0644 ${WORKDIR}/37-can-ti33x.rules ${D}${libdir}/udev/rules.d/
 }
+
+FILES:udev += " \
+    ${libdir}/udev/rules.d/37-can-j7.rules \
+    ${libdir}/udev/rules.d/37-can-am62.rules \
+    ${libdir}/udev/rules.d/37-can-dra7.rules \
+    ${libdir}/udev/rules.d/37-can-ti33x.rules \
+"
