@@ -39,15 +39,6 @@ export IMAGE_BASENAME = "tisdk-default-image"
 # available on the HW.
 IMAGE_FSTYPES:remove:omapl138 = "ubifs ubi"
 
-# Below is the delta in packages between old fuller and a new smaller default rootfs
-CHROMIUM = ""
-CHROMIUM:append:omap-a15 = "\
-    chromium-ozone-wayland \
-"
-CHROMIUM:append:k3 = "\
-    chromium-ozone-wayland \
-"
-
 EXTRABROWSERS = " \
     qtwebbrowser-examples \
     qtwebengine-qmlplugins \
@@ -56,7 +47,6 @@ EXTRABROWSERS = " \
 
 PYTHON2APPS = " \
     ${@bb.utils.contains('DISTRO_FEATURES','opengl',"${EXTRABROWSERS}",'',d)} \
-    ${@bb.utils.contains("BBFILE_COLLECTIONS","browser-layer",bb.utils.contains('DISTRO_FEATURES','wayland',"${CHROMIUM}",'',d),'',d)} \
 "
 
 DEVTOOLS = " \
