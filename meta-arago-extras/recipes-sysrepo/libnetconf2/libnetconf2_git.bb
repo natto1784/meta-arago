@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 
 DEPENDS = "libssh openssl libyang libxcrypt libpam"
 
-FILES:${PN} += "/usr/share/yang/modules/libnetconf2/*"
+FILES:${PN} += "${datadir}/yang/modules/libnetconf2/*"
 
 inherit cmake pkgconfig
 
