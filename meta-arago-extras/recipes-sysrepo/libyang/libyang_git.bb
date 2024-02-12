@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 
 DEPENDS = "libpcre2"
 
-FILES:${PN} += "/usr/share/yang/modules/libyang/*"
+FILES:${PN} += "${datadir}/yang/modules/libyang/*"
 
 inherit cmake pkgconfig
 

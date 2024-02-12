@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 DEPENDS = "libyang libnetconf2 sysrepo curl"
 RDEPENDS:${PN} += "bash curl"
 
-FILES:${PN} += "/usr/share/yang* /usr/share/netopeer2/* /usr/lib/sysrepo-plugind/*"
+FILES:${PN} += "${datadir}/yang* ${datadir}/netopeer2/* ${libdir}/sysrepo-plugind/*"
 
 inherit cmake pkgconfig
 
@@ -21,11 +21,11 @@ inherit cmake pkgconfig
 EXTRA_OECMAKE = " -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE:String=Release -DINSTALL_MODULES=OFF -DGENERATE_HOSTKEY=OFF -DMERGE_LISTEN_CONFIG=OFF"
 
 do_install:append () {
-    install -d ${D}/etc/netopeer2/scripts
-    install -o root -g root ${S}/scripts/setup.sh ${D}/etc/netopeer2/scripts/setup.sh
-    install -o root -g root ${S}/scripts/merge_hostkey.sh ${D}/etc/netopeer2/scripts/merge_hostkey.sh
-    install -o root -g root ${S}/scripts/merge_config.sh ${D}/etc/netopeer2/scripts/merge_config.sh
-    install -d ${D}/etc/netopeer2
-    install -d ${D}/etc/init.d
-    install -m 0755 ${WORKDIR}/netopeer2-server ${D}/etc/init.d/
+    install -d ${D}${sysconfdir}/netopeer2/scripts
+    install -o root -g root ${S}/scripts/setup.sh ${D}${sysconfdir}/netopeer2/scripts/setup.sh
+    install -o root -g root ${S}/scripts/merge_hostkey.sh ${D}${sysconfdir}/netopeer2/scripts/merge_hostkey.sh
+    install -o root -g root ${S}/scripts/merge_config.sh ${D}${sysconfdir}/netopeer2/scripts/merge_config.sh
+    install -d ${D}${sysconfdir}/netopeer2
+    install -d ${D}${sysconfdir}/init.d
+    install -m 0755 ${WORKDIR}/netopeer2-server ${D}${sysconfdir}/init.d/
 }
