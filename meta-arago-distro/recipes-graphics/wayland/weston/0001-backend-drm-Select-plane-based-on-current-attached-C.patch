@@ -10,6 +10,8 @@ the corresponding CRTC.
 This prevents changing a CRTC's primary plane when it is active
 which is not allowed by the DRM framework.
 
+Upstream-Status: Backport 94afcbcdc3f1b1cfc050da242c9c70009b007fc6
+
 Based-on-patch-by: Eric Ruei <e-ruei1@ti.com>
 Signed-off-by: Andrew Davis <afd@ti.com>
 ---
