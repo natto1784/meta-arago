@@ -10,7 +10,7 @@ SRC_URI = "git://github.com/sysrepo/sysrepo.git;protocol=https;branch=devel \
            ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', \
                 'file://sysrepod.service','', d)}"
 
-PV = "2.2.71+git${SRCPV}"
+PV = "2.2.71+git"
 SRCREV = "b828f0ab4693c613cc66efd053a146e05854d5c8"
 
 S = "${WORKDIR}/git"

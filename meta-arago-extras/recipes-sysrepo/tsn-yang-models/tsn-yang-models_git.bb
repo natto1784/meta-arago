@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://README.md;md5=a89040f014c0c9c9360e29ddf88bf4a7"
 
 SRC_URI = "git://github.com/YangModels/yang.git;protocol=https;branch=main"
 
-PV = "1.0+git${SRCPV}"
+PV = "1.0+git"
 SRCREV = "d3f6ca02ec9ce7c96b55066d209d08adbe851897"
 
 S = "${WORKDIR}/git"

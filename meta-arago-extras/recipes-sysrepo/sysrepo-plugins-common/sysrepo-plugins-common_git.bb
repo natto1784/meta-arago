@@ -7,7 +7,7 @@ SRC_URI = "gitsm://github.com/telekom/sysrepo-plugins-common.git;protocol=https;
 SRC_URI += " file://0001-so-version.patch "
 FILESEXTRAPATHS:prepend := "${THISDIR}:"
 
-PV = "dev+git${SRCPV}"
+PV = "dev+git"
 SRCREV = "20885de0d3bb95a05610fdb3a0f83d8f7c370fad"
 
 S = "${WORKDIR}/git"

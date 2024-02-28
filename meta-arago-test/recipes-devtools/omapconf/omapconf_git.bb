@@ -4,7 +4,7 @@ HOMEPAGE = "https://github.com/omapconf/omapconf"
 LICENSE = "GPL-2.0-only | BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=205c83c4e2242a765acb923fc766e914"
 
-PV = "1.75+git${SRCPV}"
+PV = "1.75+git"
 
 COMPATIBLE_MACHINE = "ti33x|ti43x|omap-a15|omap4"
 

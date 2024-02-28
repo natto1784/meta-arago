@@ -12,7 +12,7 @@ DEPENDS += "alsa-lib"
 
 PE = "1"
 PR = "r7"
-PV:append = "+git${SRCPV}"
+PV:append = "+git"
 
 SRCREV = "a4d1659d5ab5be50c9d3ed32578a77fd879d88dc"
 BRANCH ?= "master"

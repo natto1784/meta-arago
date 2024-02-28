@@ -16,7 +16,7 @@ BRANCH = "upstream_25_rebase"
 PR:append = "b"
 
 # Add ti to the PV to indicate that this is a TI modify version of wpa-supplicant.
-PV = "R8.7_SP3-devel-ti+git${SRCPV}"
+PV = "R8.7_SP3-devel-ti+git"
 
 PROVIDES += "wpa-supplicant"
 RPROVIDES:${PN}  += "wpa-supplicant"

@@ -12,7 +12,7 @@ FILESEXTRAPATHS:append := ":${THISDIR}/hostap-daemon"
 
 # Add TI to the end to make it clear that this is a TI customized version
 # of hostap
-PV = "R8.7_SP3-devel-ti+git${SRCPV}"
+PV = "R8.7_SP3-devel-ti+git"
 
 # Tag: R8.7_SP3
 SRCREV = "ee8fbdb840d95e048f58fb62bf3b5472041b5417"

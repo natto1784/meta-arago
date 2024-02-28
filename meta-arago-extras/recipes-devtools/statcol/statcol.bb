@@ -3,7 +3,7 @@ SUMMARY = "Statistics collector application"
 LICENSE = "TI-TSPA"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=bb6bc27cd44417c389a180bd62f552a0"
 
-PV = "1.0.4+git${SRCPV}"
+PV = "1.0.4+git"
 PROTOCOL = "https"
 BRANCH = "master"
 SRCREV = "279bf455bc3dec69f374d46a8225687935f4323a"
