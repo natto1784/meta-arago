@@ -58,7 +58,6 @@ MATRIX_QT_APPS:append:ti33x = " \
 
 MATRIX_QT_APPS:append:ti43x = " \
     matrix-analytics-pdm-anomaly-detection \
-    matrix-gui-apps-dual-camera     \
     matrix-gui-apps-image-gallery   \
                                     \
     matrix-hmi-demo-evse            \

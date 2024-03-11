@@ -14,16 +14,13 @@ MULTIMEDIA = " \
 
 MULTIMEDIA:omapl138 = ""
 
-DUAL_CAMERA_DEMO = "${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'dual-camera-demo', '', d)}"
 IMAGE_GALLERY_DEMO = "${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'image-gallery', '', d)}"
 
 MULTIMEDIA:append:ti43x = " \
-    ${DUAL_CAMERA_DEMO} \
     ${IMAGE_GALLERY_DEMO} \
 "
 
 MULTIMEDIA:append:omap-a15 = " \
-    ${DUAL_CAMERA_DEMO} \
     ${IMAGE_GALLERY_DEMO} \
 "
 
