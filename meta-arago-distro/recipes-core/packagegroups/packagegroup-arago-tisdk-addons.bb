@@ -85,9 +85,6 @@ EXTRA_PACKAGES:omapl138 = " \
     protobuf \
 "
 
-EXTRA_PACKAGES:append:omap-a15 = " ti-ipc-examples-linux"
-EXTRA_PACKAGES:append:omapl138 = " ti-ipc-examples-linux"
-
 # acontis-atemsys
 #EXTRA_PACKAGES:append:am335x-evm = " pruss-lld-apps"
 #EXTRA_PACKAGES:append:am437x-evm = " pruss-lld-apps"
