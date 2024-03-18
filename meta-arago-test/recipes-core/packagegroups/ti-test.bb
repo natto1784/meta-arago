@@ -127,6 +127,10 @@ TI_TEST_TI_TOOLS:append:j721e = " \
     videnc-test-app \
 "
 
+TI_TEST_TI_TOOLS:append:j784s4 = " \
+    ufs-utils \
+"
+
 TI_TEST_TI_TOOLS:append:omapl138 = " \
     ${@oe.utils.conditional('ARAGO_BRAND', 'mainline', '', 'ti-ipc-test', d)} \
 "
