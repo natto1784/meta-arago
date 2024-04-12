@@ -17,4 +17,4 @@ DEPLOY_IMAGES_NAME:append:am65xx-evm = " sysfw-am65x_sr2-gp-evm.itb"
 DEPLOY_IMAGES_NAME:append:am65xx-hs-evm = " sysfw-am65x_sr2-hs-evm.itb"
 
 ARAGO_TISDK_IMAGE ?= "tisdk-core-bundle"
-export IMAGE_BASENAME = "${ARAGO_TISDK_IMAGE}"
+export IMAGE_BASENAME = "${ARAGO_TISDK_IMAGE}${ARAGO_IMAGE_SUFFIX}"

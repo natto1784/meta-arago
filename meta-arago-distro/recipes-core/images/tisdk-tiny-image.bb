@@ -20,4 +20,4 @@ IMAGE_INSTALL += " \
 
 DEPENDS += " tisdk-tiny-initramfs"
 
-export IMAGE_BASENAME = "tisdk-tiny-image"
+export IMAGE_BASENAME = "tisdk-tiny-image${ARAGO_IMAGE_SUFFIX}"

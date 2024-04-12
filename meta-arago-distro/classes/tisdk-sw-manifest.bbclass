@@ -403,12 +403,12 @@ sw_manifest_target() {
     for image in ${TARGET_IMAGES}
     do
         # Only extract tar.gz or tar.bz2 types
-        if [ -e ${IMAGE_ROOTFS}/filesystem/${image}-${MACHINE}.rootfs.tar.xz ]
+        if [ -e ${IMAGE_ROOTFS}/filesystem/${image}${ARAGO_IMAGE_SUFFIX}-${MACHINE}.rootfs.tar.xz ]
         then
-            tar xJf ${IMAGE_ROOTFS}/filesystem/${image}-${MACHINE}.rootfs.tar.xz -C ${IMAGE_ROOTFS}/filesystem --wildcards *.control
-        elif [ -e ${IMAGE_ROOTFS}/filesystem/${image}-${MACHINE}.rootfs.tar.gz ]
+            tar xJf ${IMAGE_ROOTFS}/filesystem/${image}${ARAGO_IMAGE_SUFFIX}-${MACHINE}.rootfs.tar.xz -C ${IMAGE_ROOTFS}/filesystem --wildcards *.control
+        elif [ -e ${IMAGE_ROOTFS}/filesystem/${image}${ARAGO_IMAGE_SUFFIX}-${MACHINE}.rootfs.tar.gz ]
         then
-            tar xzf ${IMAGE_ROOTFS}/filesystem/${image}-${MACHINE}.rootfs.tar.gz -C ${IMAGE_ROOTFS}/filesystem --wildcards *.control
+            tar xzf ${IMAGE_ROOTFS}/filesystem/${image}${ARAGO_IMAGE_SUFFIX}-${MACHINE}.rootfs.tar.gz -C ${IMAGE_ROOTFS}/filesystem --wildcards *.control
         fi
     done
 

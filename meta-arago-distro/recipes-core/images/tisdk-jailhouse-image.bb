@@ -11,6 +11,6 @@ COMPATIBLE_MACHINE = "am62xx|am62pxx"
 
 IMAGE_INSTALL += " jailhouse"
 
-export IMAGE_BASENAME = "tisdk-jailhouse-image"
+export IMAGE_BASENAME = "tisdk-jailhouse-image${ARAGO_IMAGE_SUFFIX}"
 
 WIC_CREATE_EXTRA_ARGS:append = " --no-fstab-update"
