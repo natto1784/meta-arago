@@ -33,7 +33,7 @@ IMAGE_INSTALL += "\
     packagegroup-arago-tisdk-sysrepo \
 "
 
-export IMAGE_BASENAME = "tisdk-default-image"
+export IMAGE_BASENAME = "tisdk-default-image${ARAGO_IMAGE_SUFFIX}"
 
 # Disable ubi/ubifs as the filesystem requires more space than is
 # available on the HW.

@@ -14,7 +14,7 @@ IMAGE_INSTALL = " \
 	${CORE_IMAGE_EXTRA_INSTALL} \
 "
 
-export IMAGE_BASENAME = "arago-image"
+export IMAGE_BASENAME = "arago-image${ARAGO_IMAGE_SUFFIX}"
 
 IMAGE_LINGUAS = ""
 

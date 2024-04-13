@@ -23,7 +23,7 @@ IMAGE_FSTYPES = "${INITRAMFS_FSTYPES}"
 
 PACKAGE_INSTALL = "packagegroup-arago-initramfs"
 
-export IMAGE_BASENAME = "tisdk-tiny-initramfs"
+export IMAGE_BASENAME = "tisdk-tiny-initramfs${ARAGO_IMAGE_SUFFIX}"
 
 # To further reduce the size of the rootfs, remove the /boot directory from
 # the final image this is usually done by adding RDEPENDS_kernel-base = ""

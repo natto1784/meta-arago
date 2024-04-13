@@ -21,7 +21,7 @@ IMAGE_INSTALL += "\
     ${ARAGO_THIN_IMAGE_EXTRA_INSTALL} \
 "
 
-export IMAGE_BASENAME = "tisdk-thinlinux-image"
+export IMAGE_BASENAME = "tisdk-thinlinux-image${ARAGO_IMAGE_SUFFIX}"
 
 # Disable ubi/ubifs as the filesystem requires more space than is
 # available on the HW.
