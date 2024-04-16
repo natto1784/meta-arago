@@ -2,7 +2,8 @@ SUMMARY = "Host packages for a standalone Arago SDK with TI tools"
 PR = "r2"
 LICENSE = "MIT"
 
-inherit packagegroup nativesdk
+inherit packagegroup
+inherit_defer nativesdk
 
 PACKAGEGROUP_DISABLE_COMPLEMENTARY = "1"
 
