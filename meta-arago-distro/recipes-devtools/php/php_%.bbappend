@@ -11,9 +11,13 @@ SRC_URI:append:virtclass-native = " file://0001-php-native-Fix-host-contaminatio
 # Issue mentioned here: https://bugs.php.net/bug.php?id=60144
 
 EXTRA_OECONF:remove = "--enable-fpm"
+EXTRA_OECONF:append = " --disable-fpm"
 
 PACKAGES:remove = "${PN}-fpm"
 PACKAGES:remove = "${PN}-fpm-apache2"
+
+SYSTEMD_PACKAGES:remove = "${PN}-fpm"
+INITSCRIPT_PACKAGES:remove = "${PN}-fpm"
 
 do_install:prepend:pn-php() {
     # Add the below file even though we aren't going to use it.
