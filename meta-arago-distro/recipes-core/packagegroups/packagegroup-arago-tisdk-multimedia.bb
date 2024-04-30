@@ -14,16 +14,6 @@ MULTIMEDIA = " \
 
 MULTIMEDIA:omapl138 = ""
 
-IMAGE_GALLERY_DEMO = "${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'image-gallery', '', d)}"
-
-MULTIMEDIA:append:ti43x = " \
-    ${IMAGE_GALLERY_DEMO} \
-"
-
-MULTIMEDIA:append:omap-a15 = " \
-    ${IMAGE_GALLERY_DEMO} \
-"
-
 MULTIMEDIA:append:dra7xx = " \
     vis \
     hevc-arm-decoder \
