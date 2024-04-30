@@ -18,5 +18,4 @@ RDEPENDS:${PN} = "\
     ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'qtwayland-examples', '', d)} \
     qtserialport-examples \
     qtcharts-examples \
-    qt-tstat \
 "
