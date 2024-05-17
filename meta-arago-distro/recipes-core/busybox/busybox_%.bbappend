@@ -1,6 +1,8 @@
-# look for files in this layer first
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-SRC_URI:append = " file://0001-rtcwake-Allow-poweroff-with-rtcwake-command.patch "
+SRC_URI += " \
+	file://network.cfg \
+	file://utils.cfg \
+"
 
-PR:append = ".arago21"
+PR:append = ".arago22"
