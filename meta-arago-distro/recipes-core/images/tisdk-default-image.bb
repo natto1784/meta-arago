@@ -54,6 +54,7 @@ DEVTOOLS = " \
     build-essential \
     packagegroup-core-tools-debug \
     git \
+    dtc \
 "
 
 OPENCL = " \
