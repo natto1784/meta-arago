@@ -79,6 +79,7 @@ EXTRA_PACKAGES = " \
     nodejs-npm \
     protobuf \
     ccief-basic \
+    python3-pip \
 "
 
 EXTRA_PACKAGES:omapl138 = " \
