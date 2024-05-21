@@ -16,7 +16,7 @@ SRC_URI:append = " \
 do_install:append() {
     install -d ${D}/${bindir}
 
-    install -m 0755 ${WORKDIR}/usb1-rules.sh ${D}${bindir}/usb1-rules.sh
-    install -m 0755 ${WORKDIR}/usb2-rules.sh ${D}${bindir}/usb2-rules.sh
+    install -m 0755 ${UNPACKDIR}/usb1-rules.sh ${D}${bindir}/usb1-rules.sh
+    install -m 0755 ${UNPACKDIR}/usb2-rules.sh ${D}${bindir}/usb2-rules.sh
     ln -sf libudev.so.1 ${D}${base_libdir}/libudev.so.0
 }

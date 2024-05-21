@@ -38,10 +38,10 @@ do_install:append () {
     install -d ${D}${sysconfdir}/netopeer2
     install -d ${D}${sysconfdir}/init.d
     if ${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', 'true', 'false', d)}; then
-        install -m 0755 ${WORKDIR}/netopeer2-server ${D}${sysconfdir}/init.d/
+        install -m 0755 ${UNPACKDIR}/netopeer2-server ${D}${sysconfdir}/init.d/
     fi
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
         install -d ${D}${systemd_system_unitdir}
-        install -m 0644 ${WORKDIR}/netopeer2-serverd.service ${D}${systemd_system_unitdir}
+        install -m 0644 ${UNPACKDIR}/netopeer2-serverd.service ${D}${systemd_system_unitdir}
     fi
 }

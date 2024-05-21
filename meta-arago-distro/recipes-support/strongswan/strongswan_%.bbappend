@@ -14,5 +14,5 @@ EXTRA_OECONF += " \
 SRC_URI += "file://pkcs11_plugin.conf"
 
 do_install:append () {
-	install -m 0644 ${WORKDIR}/pkcs11_plugin.conf ${D}${sysconfdir}/strongswan.d/
+	install -m 0644 ${UNPACKDIR}/pkcs11_plugin.conf ${D}${sysconfdir}/strongswan.d/
 }

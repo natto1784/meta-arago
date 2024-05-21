@@ -12,9 +12,9 @@ SRC_URI = "file://qt_env.sh \
 # Add custom Arago qtbase Environment script and eglfs_kms configuration file
 do_install () {
     install -d ${D}${sysconfdir}/profile.d
-    install -m 0644 ${WORKDIR}/qt_env.sh ${D}${sysconfdir}/profile.d/
+    install -m 0644 ${UNPACKDIR}/qt_env.sh ${D}${sysconfdir}/profile.d/
     install -d ${D}${sysconfdir}/qt5
-    install -m 0644 ${WORKDIR}/eglfs_kms_cfg.json ${D}${sysconfdir}/qt5/
+    install -m 0644 ${UNPACKDIR}/eglfs_kms_cfg.json ${D}${sysconfdir}/qt5/
 }
 
 FILES:${PN} += "${sysconfdir}/profile.d/* ${sysconfdir}/qt5/*"

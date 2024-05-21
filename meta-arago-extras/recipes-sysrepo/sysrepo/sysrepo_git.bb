@@ -40,12 +40,12 @@ do_install:append () {
     install -o root -g root ${S}/modules/ietf-netconf.yang ${D}${sysconfdir}/sysrepo/yang/ietf-netconf@2011-06-01.yang
     install -d ${D}${sysconfdir}/init.d
     if ${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', 'true', 'false', d)}; then
-        install -m 0775 ${WORKDIR}/sysrepo ${D}${sysconfdir}/init.d/
+        install -m 0775 ${UNPACKDIR}/sysrepo ${D}${sysconfdir}/init.d/
         install -d ${D}${libdir}/sysrepo/plugins
     fi
 
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
         install -d ${D}${systemd_system_unitdir}
-        install -m 0644 ${WORKDIR}/sysrepod.service ${D}${systemd_system_unitdir}
+        install -m 0644 ${UNPACKDIR}/sysrepod.service ${D}${systemd_system_unitdir}
     fi
 }

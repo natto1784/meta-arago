@@ -26,7 +26,7 @@ SRC_URI += "\
 python do_patch:append() {
     import shutil
 
-    work_dir = d.getVar("WORKDIR")
+    work_dir = d.getVar("UNPACKDIR")
     s = d.getVar("S")
 
     if not bb.utils.contains('DISTRO_FEATURES','wayland',True,False,d):

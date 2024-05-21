@@ -13,7 +13,7 @@ inherit update-rc.d
 
 do_install() {
     install -d ${D}${sysconfdir}/init.d
-    install -m 0755 ${WORKDIR}/init ${D}${sysconfdir}/init.d/${INITSCRIPT_NAME}
+    install -m 0755 ${UNPACKDIR}/init ${D}${sysconfdir}/init.d/${INITSCRIPT_NAME}
 }
 
 FILES:${PN} = "${sysconfdir} ${bindir}"

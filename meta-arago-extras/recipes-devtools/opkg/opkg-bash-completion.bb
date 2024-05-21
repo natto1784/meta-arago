@@ -9,7 +9,7 @@ SRC_URI = "file://opkg-bash-completion"
 
 do_install() {
     install -d ${D}${datadir}/bash-completion/completions
-    install -m 0644 ${WORKDIR}/opkg-bash-completion \
+    install -m 0644 ${UNPACKDIR}/opkg-bash-completion \
                     ${D}${datadir}/bash-completion/completions/opkg
 }
 
