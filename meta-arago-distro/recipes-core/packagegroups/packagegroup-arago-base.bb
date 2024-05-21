@@ -19,7 +19,6 @@ ARAGO_BASE = "\
     initscript-telnetd \
     systemd-telnetd \
     ethtool \
-    thermal-init \
     bash \
     opkg-bash-completion \
     udev-extraconf \
