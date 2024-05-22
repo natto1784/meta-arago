@@ -8,7 +8,8 @@ PR = "r1"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 # Default configuration file is from the base udhcp package
 SRC_URI = "file://udhcpd.conf \

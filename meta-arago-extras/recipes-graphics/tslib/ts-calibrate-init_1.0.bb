@@ -8,7 +8,8 @@ LIC_FILES_CHKSUM = "file://init;beginline=2;endline=11;md5=4b2e3b15f01cf63d2cb79
 
 PR = "r4"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 INITSCRIPT_NAME = "ts-calibrate"
 
@@ -26,5 +27,5 @@ do_install(){
 	# Install the init script
 	# TODO: replace init script with systemd files
 	install -d ${D}${sysconfdir}/init.d
-	install -m 0755 ${WORKDIR}/init ${D}${sysconfdir}/init.d/ts-calibrate
+	install -m 0755 ${S}/init ${D}${sysconfdir}/init.d/ts-calibrate
 }

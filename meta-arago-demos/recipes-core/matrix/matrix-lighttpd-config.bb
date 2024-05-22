@@ -12,11 +12,12 @@ SRC_URI = "file://lighttpd.conf.matrix"
 # Grabbed COPYING file from lighttpd_1.4.30
 SRC_URI += "file://COPYING"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 do_install() {
 	install -d ${D}${sysconfdir}/lighttpd
-	install -m 0644 ${WORKDIR}/lighttpd.conf.matrix ${D}${sysconfdir}/lighttpd/lighttpd.conf.matrix
+	install -m 0644 ${S}/lighttpd.conf.matrix ${D}${sysconfdir}/lighttpd/lighttpd.conf.matrix
 }
 
 FILES:${PN} = "${sysconfdir}/lighttpd/lighttpd.conf.matrix"

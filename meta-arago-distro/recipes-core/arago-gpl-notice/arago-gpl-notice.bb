@@ -4,7 +4,8 @@ LIC_FILES_CHKSUM = "file://print-gplv3-packages.sh;beginline=2;endline=18;md5=d1
 
 PR = "r3"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 INITSCRIPT_NAME = "gplv3-notice"
 INITSCRIPT_PARAMS = "defaults 99"
@@ -24,7 +25,7 @@ do_install(){
 		install -d ${D}${bindir}
 		install -d ${D}${systemd_system_unitdir}
 		install -m 0755 ${S}/print-gplv3-packages.sh ${D}${bindir}/gplv3-notice
-		install -m 0644 ${WORKDIR}/gplv3-notice.service ${D}${systemd_system_unitdir}
+		install -m 0644 ${S}/gplv3-notice.service ${D}${systemd_system_unitdir}
 	fi
 }
 

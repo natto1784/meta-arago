@@ -6,7 +6,8 @@ CLEANBROKEN = "1"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 BOOSTRAP_IMAGE = "tisdk-bootstrap-base-image"
 
