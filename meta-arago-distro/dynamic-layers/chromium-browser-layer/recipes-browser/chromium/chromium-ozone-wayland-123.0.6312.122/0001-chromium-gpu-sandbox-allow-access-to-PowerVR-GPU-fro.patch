@@ -1,8 +1,11 @@
-From 11267fe76f81dce283d565d517b679aa2be44466 Mon Sep 17 00:00:00 2001
-From: Darren Etheridge <detheridge@ti.com>
-Date: Fri, 26 Jan 2024 10:54:49 -0600
+From a27529b8808e2eaa18ae5a30d5fee8193969bde7 Mon Sep 17 00:00:00 2001
+From: Darren Etheridge <a0867391@uda0393673-1.dhcp.ti.com>
+Date: Mon, 20 May 2024 15:48:36 -0500
 Subject: [PATCH] chromium: gpu: sandbox: allow access to PowerVR GPU from
  sandbox
+
+Upstream-Status: Pending [not strictly necessary, but reduces
+permissions warnings on console]
 
 Chromium runs in a sandbox to limit access to the system, however
 the PowerVR drivers for the Imagination GPU used on TI hardware need
@@ -11,13 +14,13 @@ This patch opens up the necessary pieces.
 
 Signed-off-by: Darren Etheridge <detheridge@ti.com>
 ---
- content/gpu/gpu_sandbox_hook_linux.cc | 16 +++++++++++++++-
+ content/common/gpu_pre_sandbox_hook_linux.cc | 16 +++++++++++++++-
  1 file changed, 15 insertions(+), 1 deletion(-)
 
-diff --git a/content/gpu/gpu_sandbox_hook_linux.cc b/content/gpu/gpu_sandbox_hook_linux.cc
-index d93285a..1f8aafd 100644
---- a/content/gpu/gpu_sandbox_hook_linux.cc
-+++ b/content/gpu/gpu_sandbox_hook_linux.cc
+diff --git a/content/common/gpu_pre_sandbox_hook_linux.cc b/content/common/gpu_pre_sandbox_hook_linux.cc
+index 28de3c7..7db0617 100644
+--- a/content/common/gpu_pre_sandbox_hook_linux.cc
++++ b/content/common/gpu_pre_sandbox_hook_linux.cc
 @@ -67,6 +67,11 @@ inline bool UseChromecastSandboxAllowlist() {
  #endif
  }
@@ -30,7 +33,7 @@ index d93285a..1f8aafd 100644
  inline bool IsArchitectureArm() {
  #if defined(ARCH_CPU_ARM_FAMILY)
    return true;
-@@ -441,6 +446,11 @@ std::vector<BrokerFilePermission> FilePermissionsForGpu(
+@@ -484,6 +489,11 @@ std::vector<BrokerFilePermission> FilePermissionsForGpu(
 
    AddVulkanICDPermissions(&permissions);
 
@@ -42,7 +45,7 @@ index d93285a..1f8aafd 100644
    if (IsChromeOS()) {
      // Permissions are additive, there can be multiple GPUs in the system.
      AddStandardChromeOsPermissions(&permissions);
-@@ -508,6 +518,8 @@ void LoadArmGpuLibraries() {
+@@ -552,6 +562,8 @@ void LoadArmGpuLibraries() {
          DRI_DRIVER_DIR "/mediatek_dri.so",
          DRI_DRIVER_DIR "/rockchip_dri.so",
          DRI_DRIVER_DIR "/asahi_dri.so",
@@ -51,7 +54,7 @@ index d93285a..1f8aafd 100644
  #else
          "/usr/lib64/dri/msm_dri.so",
          "/usr/lib64/dri/panfrost_dri.so",
-@@ -515,6 +527,8 @@ void LoadArmGpuLibraries() {
+@@ -559,6 +571,8 @@ void LoadArmGpuLibraries() {
          "/usr/lib64/dri/rockchip_dri.so",
          "/usr/lib64/dri/asahi_dri.so",
          "/usr/lib/dri/msm_dri.so",
@@ -60,7 +63,7 @@ index d93285a..1f8aafd 100644
          "/usr/lib/dri/panfrost_dri.so",
          "/usr/lib/dri/mediatek_dri.so",
          "/usr/lib/dri/rockchip_dri.so",
-@@ -632,7 +646,7 @@ sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
+@@ -655,7 +669,7 @@ sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
    command_set.set(sandbox::syscall_broker::COMMAND_ACCESS);
    command_set.set(sandbox::syscall_broker::COMMAND_OPEN);
    command_set.set(sandbox::syscall_broker::COMMAND_STAT);
@@ -68,6 +71,6 @@ index d93285a..1f8aafd 100644
 +  if ((IsGPUIMGRogue() || IsChromeOS()) &&
        (options.use_amd_specific_policies ||
         options.use_intel_specific_policies ||
-        options.use_virtio_specific_policies || IsArchitectureArm())) {
+        options.use_nvidia_specific_policies ||
 --
-2.36.1
+2.34.1
