@@ -20,6 +20,8 @@ S = "${WORKDIR}/git"
 
 TARGET_CC_ARCH += "${LDFLAGS}"
 
+EXTRA_OEMAKE = "CC="${CC} -fpermissive""
+
 do_compile() {
 # build Master sample application
     cd ${S}/CCIEF-BASIC_Master/build/linux
