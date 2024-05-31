@@ -9,7 +9,7 @@ GO_IMPORT = "github.com/joewalnes/websocketd"
 
 export GOPROXY = "https://proxy.golang.org,direct"
 
-SRC_URI = "git://${GO_IMPORT};protocol=https;branch=master"
+SRC_URI = "git://${GO_IMPORT};protocol=https;branch=master;destsuffix=${GO_SRCURI_DESTSUFFIX}"
 SRCREV = "035c18cc3e6962dabd5ea2ad8845260726a4a99e"
 
 # bitbake only exports proxy variables during fetching, but go handles
