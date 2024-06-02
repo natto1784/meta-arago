@@ -69,6 +69,7 @@ TI_TEST_BASE:append:armv7ve = " \
 #    timestamping
 TI_TEST_TI_TOOLS = " \
     arm-benchmarks \
+    arm-ddr-bandwidth \
     cpuloadgen \
     input-utils \
     ltp-ddt \
