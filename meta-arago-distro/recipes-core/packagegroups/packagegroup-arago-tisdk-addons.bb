@@ -18,6 +18,7 @@ UTILS = " \
     open62541-examples \
     open62541-tests \
     sudo \
+    watchdog \
 "
 
 UTILS_UBOOT_FW = "libubootenv-bin"
