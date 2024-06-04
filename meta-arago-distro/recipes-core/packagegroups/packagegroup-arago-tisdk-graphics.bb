@@ -19,6 +19,7 @@ GFX_UTILS:append:omap-a15  = "\
 RDEPENDS:${PN} = "\
     libegl \
     glmark2 \
+    kmscube \
     ${@bb.utils.contains('MACHINE_FEATURES', 'gc320', 'ti-gc320-tests', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', "${GFX_WAYLAND}", '', d)} \
     ${GFX_UTILS} \
