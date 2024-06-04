@@ -24,7 +24,7 @@ do_configure() {
 
 do_compile() {
     cd ${S}/Client/Build/ARM
-    oe_runmake CC="${CC}" LINKER="${CC}"
+    oe_runmake CC="${CC} -fpermissive" LINKER="${CC}"
 }
 
 do_install() {
