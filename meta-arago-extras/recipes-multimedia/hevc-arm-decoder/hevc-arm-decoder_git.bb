@@ -38,7 +38,7 @@ do_install() {
     install -m 755 ${S}/Client/Build/ARM/Out/h265vdec_pp ${D}${bindir}
 
     install -d ${D}${datadir}/ti/examples/h265vdec
-    install -m 644 ${WORKDIR}/Testparams.cfg ${D}${datadir}/ti/examples/h265vdec
+    install -m 644 ${UNPACKDIR}/Testparams.cfg ${D}${datadir}/ti/examples/h265vdec
 
     install -d ${D}${docdir}/${PN}
     for doc in ${S}/Docs/*; do
