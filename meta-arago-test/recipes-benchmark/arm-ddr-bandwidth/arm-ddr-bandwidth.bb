@@ -17,8 +17,13 @@ UNPACKDIR = "${S}"
 
 do_install() {
     install -d ${D}${datadir}/matrix-gui-2.0/apps
-    install -m 0755 ${S}/runLmDDRBandwidth.sh ${D}${datadir}/matrix-gui-2.0/apps/runLmDDRBandwidth.sh
+
+    install -d ${D}${bindir}
+    install -m 0755 ${S}/runLmDDRBandwidth.sh ${D}${bindir}/runLmDDRBandwidth.sh
 }
 
-FILES:${PN} = "${datadir}/matrix-gui-2.0/apps/runLmDDRBandwidth.sh"
+FILES:${PN} = " \
+    ${datadir}/matrix-gui-2.0/apps \
+    ${bindir}/runLmDDRBandwidth.sh \
+"
 
