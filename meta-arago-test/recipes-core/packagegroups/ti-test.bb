@@ -73,6 +73,7 @@ TI_TEST_TI_TOOLS = " \
     cpuloadgen \
     input-utils \
     ltp-ddt \
+    openssl-perf \
     uvc-gadget \
 "
 
