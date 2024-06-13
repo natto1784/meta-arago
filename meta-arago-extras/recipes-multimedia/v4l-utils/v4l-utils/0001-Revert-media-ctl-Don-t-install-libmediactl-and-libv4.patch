@@ -7,6 +7,8 @@ Subject: [PATCH] Revert "media-ctl: Don't install libmediactl and
 
 This reverts commit 0911dce53b08b0df3066be2c75f67e8a314d8729.
 
+Upstream-Status: Pending
+
 Signed-off-by: Khem Raj <raj.khem@gmail.com>
 
 Conflicts:

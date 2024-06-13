@@ -6,6 +6,8 @@ Subject: [PATCH] configure: Do not check build executable extension.
  * This seems to cause issues nativesdk and build sdk
    architectures are the same.
 
+Upstream-Status: Inappropriate [oe specific]
+
 Signed-off-by: Jake Stiffler <j-stiffler@ti.com>
 ---
  configure                 |    3 +++

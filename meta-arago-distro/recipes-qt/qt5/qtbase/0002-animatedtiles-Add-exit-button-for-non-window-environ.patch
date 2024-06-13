@@ -4,6 +4,8 @@ Date: Fri, 20 Mar 2015 15:00:51 -0400
 Subject: [PATCH 2/2] animatedtiles: Add exit button for non-window
  environment.
 
+Upstream-Status: Inappropriate [arago specific]
+
 Signed-off-by: Jake Stiffler <jake@mcsdk-hpc-test.(none)>
 ---
  .../animation/animatedtiles/animatedtiles.qrc      |    1 +

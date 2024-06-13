@@ -3,6 +3,8 @@ From: Denys Dmytriyenko <denys@ti.com>
 Date: Sun, 26 Mar 2017 15:12:44 -0400
 Subject: [PATCH] Makefile: correct use of CPP/CXX and other standard variables
 
+Upstream-Status: Inappropriate [oe specific]
+
 Signed-off-by: Denys Dmytriyenko <denys@ti.com>
 ---
  src/kernels/make.inc         | 16 +++++++---------

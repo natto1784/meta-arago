@@ -3,6 +3,8 @@ From: Eric Ruei <e-ruei1@ti.com>
 Date: Tue, 16 Aug 2016 15:09:04 -0400
 Subject: [PATCH] touchinteraction.qml: Add "exit" button
 
+Upstream-Status: Inappropriate [arago specific]
+
 Signed-off-by: Eric Ruei <e-ruei1@ti.com>
 ---
  .../quick/touchinteraction/touchinteraction.qml    | 38 ++++++++++++++++++++++

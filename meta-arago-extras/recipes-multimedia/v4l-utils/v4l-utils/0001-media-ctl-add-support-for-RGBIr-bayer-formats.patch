@@ -3,6 +3,8 @@ From: Jai Luthra <j-luthra@ti.com>
 Date: Tue, 5 Jul 2022 16:23:39 +0530
 Subject: [PATCH] media-ctl: add support for RGBIr bayer formats
 
+Upstream-Status: Pending
+
 Signed-off-by: Jai Luthra <j-luthra@ti.com>
 ---
  include/linux/media-bus-format.h | 10 +++++++++-

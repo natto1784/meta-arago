@@ -6,6 +6,8 @@ Subject: [PATCH 3/3] v4l2-ctl/compliance: add routing and streams multiplexed
 
 Add basic support for routing and streams.
 
+Upstream-Status: Pending
+
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
  utils/v4l2-compliance/v4l2-compliance.cpp   | 120 ++++++++++++++++----

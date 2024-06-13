@@ -8,6 +8,8 @@ configurations per stream.
 
 Based on work from Sakari Ailus <sakari.ailus@linux.intel.com>.
 
+Upstream-Status: Pending
+
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
  utils/media-ctl/libmediactl.c   |  41 +++++

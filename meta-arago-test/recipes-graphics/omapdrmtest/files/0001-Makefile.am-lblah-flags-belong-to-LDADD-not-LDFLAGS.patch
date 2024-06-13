@@ -3,6 +3,8 @@ From: Denys Dmytriyenko <denys@ti.com>
 Date: Wed, 4 Apr 2018 20:09:54 -0400
 Subject: [PATCH] Makefile.am: -lblah flags belong to LDADD, not LDFLAGS
 
+Upstream-Status: Inappropriate [oe specific]
+
 Signed-off-by: Denys Dmytriyenko <denys@ti.com>
 ---
  Makefile.am | 3 +--

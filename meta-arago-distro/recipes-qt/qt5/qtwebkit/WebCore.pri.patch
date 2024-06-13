@@ -1,3 +1,6 @@
+
+Upstream-Status: Inappropriate [arago specific]
+
 diff --git a/Source/WebCore/WebCore.pri b/Source/WebCore/WebCore.pri
 index 0189394..00f7090 100644
 --- a/Source/WebCore/WebCore.pri

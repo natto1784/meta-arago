@@ -12,6 +12,8 @@ configurations per stream.
 Based on work from Jacopo Mondi <jacopo@jmondi.org> and
 Niklas Söderlund <niklas.soderlund+renesas@ragnatech.se>.
 
+Upstream-Status: Pending
+
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
  utils/v4l2-ctl/v4l2-ctl-subdev.cpp | 288 +++++++++++++++++++++++++----

@@ -1,3 +1,6 @@
+
+Upstream-Status: Inappropriate [arago specific]
+
 --- qtwebkit/Source/WebCore/platform/graphics/qt/GraphicsContext3DQt.cpp.orig	2013-09-07 13:41:19.946858466 +0530
 +++ qtwebkit/Source/WebCore/platform/graphics/qt/GraphicsContext3DQt.cpp	2013-09-07 17:48:13.958979770 +0530
 @@ -383,21 +383,23 @@ GraphicsContext3D::GraphicsContext3D(Gra

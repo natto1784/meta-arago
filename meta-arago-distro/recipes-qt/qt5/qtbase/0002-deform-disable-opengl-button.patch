@@ -3,6 +3,8 @@ From: Jacob Stiffler <j-stiffler@ti.com>
 Date: Fri, 12 Jun 2015 10:24:33 -0400
 Subject: [PATCH 2/2] deform: disable opengl button.
 
+Upstream-Status: Inappropriate [arago specific]
+
 Signed-off-by: Jacob Stiffler <j-stiffler@ti.com>
 ---
  examples/widgets/painting/deform/pathdeform.cpp |   12 ++++++------

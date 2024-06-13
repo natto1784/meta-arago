@@ -4,6 +4,8 @@ Date: Thu, 17 Jul 2014 16:11:46 -0400
 Subject: [PATCH] Target.pri: update to use GL_NoX version of GraphicsSurface
  sources
 
+Upstream-Status: Inappropriate [arago specific]
+
 Signed-off-by: Denys Dmytriyenko <denys@ti.com>
 ---
  Source/WebCore/Target.pri | 4 ++++

@@ -3,7 +3,7 @@ From: Eric Ruei <e-ruei1@ti.com>
 Date: Fri, 8 Mar 2019 17:02:38 -0500
 Subject: [PATCH] qtbase: plugins: platforms: eglfs_kms: fix compiler error
 
-Upstream_Status: Pending
+Upstream-Status: Pending
 
 Signed-off-by: Eric Ruei <e-ruei1@ti.com>
 ---

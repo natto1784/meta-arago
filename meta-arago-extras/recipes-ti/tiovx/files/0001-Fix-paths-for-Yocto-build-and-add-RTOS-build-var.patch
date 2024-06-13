@@ -3,6 +3,8 @@ From: Djordje Senicic <d-senicic1@ti.com>
 Date: Mon, 14 Aug 2017 10:26:39 -0400
 Subject: [PATCH] Fix paths for Yocto build and add RTOS build var
 
+Upstream-Status: Inappropriate [oe specific]
+
 Signed-off-by: Djordje Senicic <d-senicic1@ti.com>
 ---
  Makefile            | 27 +++++++++++++++++++--------

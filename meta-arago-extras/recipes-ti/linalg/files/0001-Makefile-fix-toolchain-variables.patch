@@ -3,6 +3,8 @@ From: Denys Dmytriyenko <denys@ti.com>
 Date: Sun, 26 Mar 2017 18:17:06 -0400
 Subject: [PATCH] Makefile: fix toolchain variables
 
+Upstream-Status: Inappropriate [oe specific]
+
 Signed-off-by: Denys Dmytriyenko <denys@ti.com>
 ---
  examples/arm+dsp/make.inc                         |  1 -

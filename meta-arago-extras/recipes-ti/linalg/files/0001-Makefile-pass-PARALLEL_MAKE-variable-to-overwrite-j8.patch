@@ -3,6 +3,8 @@ From: Denys Dmytriyenko <denys@ti.com>
 Date: Wed, 29 Mar 2017 13:09:05 -0400
 Subject: [PATCH] Makefile: pass PARALLEL_MAKE variable to overwrite -j8
 
+Upstream-Status: Inappropriate [oe specific]
+
 Signed-off-by: Denys Dmytriyenko <denys@ti.com>
 ---
  src/ti/linalg/Makefile | 12 +++++++-----

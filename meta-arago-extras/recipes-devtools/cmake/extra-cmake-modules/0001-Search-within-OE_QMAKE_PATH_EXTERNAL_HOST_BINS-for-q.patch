@@ -4,6 +4,8 @@ Date: Mon, 29 Dec 2014 12:05:20 +0100
 Subject: [PATCH] Search within OE_QMAKE_PATH_EXTERNAL_HOST_BINS for
  qtwaylandscanner
 
+Upstream-Status: Inappropriate [oe specific]
+
 Signed-off-by: Simon Busch <morphis@gravedo.de>
 ---
  find-modules/FindQtWaylandScanner.cmake | 2 +-

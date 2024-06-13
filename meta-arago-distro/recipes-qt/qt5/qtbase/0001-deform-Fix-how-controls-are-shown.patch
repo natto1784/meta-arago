@@ -8,6 +8,8 @@ Subject: [PATCH 1/2] deform: Fix how controls are shown.
 * If controls are not full screen, then they must retain focus while
   opened.
 
+Upstream-Status: Pending
+
 Signed-off-by: Jacob Stiffler <j-stiffler@ti.com>
 ---
  examples/widgets/painting/deform/pathdeform.cpp |    4 +++-

@@ -1,3 +1,6 @@
+
+Upstream-Status: Inappropriate [arago specific]
+
 diff --git a/tensorflow/lite/tools/make/downloads/eigen/Eigen/src/Core/arch/NEON/Complex.h b/tensorflow/lite/tools/make/downloads/eigen/Eigen/src/Core/arch/NEON/Complex.h
 index 306a309beb..4527a64c91 100644
 --- a/tensorflow/lite/tools/make/downloads/eigen/Eigen/src/Core/arch/NEON/Complex.h
