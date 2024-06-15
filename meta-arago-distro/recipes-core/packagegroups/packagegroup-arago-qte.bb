@@ -6,9 +6,6 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 
-WEBKIT = "qtwebkit-qmlplugins"
-WEBKIT:armv5 = ""
-
 RDEPENDS:${PN} = "\
     qtbase-plugins \
     qtdeclarative-qmlplugins \
@@ -23,7 +20,6 @@ RDEPENDS:${PN} = "\
     qtgraphicaleffects-qmlplugins \
     qtvirtualkeyboard-plugins \
     qtvirtualkeyboard-qmlplugins \
-    ${WEBKIT} \
     liberation-fonts \
     qtconnectivity \
     qtconnectivity-qmlplugins \
