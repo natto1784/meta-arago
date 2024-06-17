@@ -76,8 +76,6 @@ UTILS:append:dra7xx = " \
 #"
 
 EXTRA_PACKAGES = " \
-    nodejs \
-    nodejs-npm \
     protobuf \
     ccief-basic \
     python3-pip \
