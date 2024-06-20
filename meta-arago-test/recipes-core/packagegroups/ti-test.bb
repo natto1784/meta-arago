@@ -29,6 +29,7 @@ TI_TEST_BASE = "\
     linuxptp \
     lmbench \
     lsof \
+    media-ctl \
     memtester \
     mstpd \
     mtd-utils \
