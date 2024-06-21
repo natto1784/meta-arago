@@ -27,6 +27,10 @@ WLAN_TI = "\
     wl18xx-calibrator \
     wl18xx-target-scripts \
     wl18xx-fw \
+    cc33xx-fw \
+    cc33xx-target-scripts \
+    cc33conf \
+    cc33calibrator \
 "
 
 BT_COMMON = "\
