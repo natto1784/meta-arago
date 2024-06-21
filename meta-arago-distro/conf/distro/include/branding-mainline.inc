@@ -1,1 +1,1 @@
-TI_DEFAULT_BSP = "mainline"
+TI_PREFERRED_BSP = "mainline"

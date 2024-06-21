@@ -1,4 +1,4 @@
-TI_DEFAULT_BSP = "ti-6_6"
+TI_PREFERRED_BSP = "ti-6_6"
 
 # Remove mmip - DRM allocator, KMS sink, Wayland sink need porting to GST 1.18
 MACHINE_FEATURES:remove = "mmip"
