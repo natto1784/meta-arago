@@ -5,6 +5,7 @@ LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=ef345f161efb68c3836e6f5648b2312f"
 
 SRC_URI = "git://github.com/sysrepo/sysrepo.git;protocol=https;branch=devel \
+           file://0001-Hardcode-correct-path-to-tar-binary.patch \
            ${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', \
                 'file://sysrepo','', d)} \
            ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', \
@@ -31,6 +32,8 @@ BBCLASSEXTEND = "native nativesdk"
 SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE:${PN} = "sysrepod.service"
 SYSTEMD_AUTO_ENABLE:${PN} = "disable"
+
+RDEPENDS:${PN} += "tar"
 
 do_install:append () {
     install -d ${D}${sysconfdir}/sysrepo/data/notifications
