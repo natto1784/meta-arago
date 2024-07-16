@@ -1,7 +1,7 @@
-From 6554635378ef4c6ee5f1bf8521b1cf4fe7911fa1 Mon Sep 17 00:00:00 2001
+From 999fa7f4c79f9502b4f9d9e6d380f82bf839a250 Mon Sep 17 00:00:00 2001
 From: Tomi Valkeinen <tomi.valkeinen@ti.com>
 Date: Thu, 18 May 2017 12:18:28 +0300
-Subject: [PATCH 1/2] omap: fix omap_bo_size for tiled buffers
+Subject: [PATCH] omap: fix omap_bo_size for tiled buffers
 
 The buffer size is calculated using pixels, not bytes as it should. The
 result is often correct, though, as the stride is aligned to page size,
@@ -19,10 +19,10 @@ Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ti.com>
  1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/omap/omap_drm.c b/omap/omap_drm.c
-index 08ba64e..a6f8a21 100644
+index 42d35ef..06221b7 100644
 --- a/omap/omap_drm.c
 +++ b/omap/omap_drm.c
-@@ -215,11 +215,9 @@ static struct omap_bo * omap_bo_new_impl(struct omap_device *dev,
+@@ -207,11 +207,9 @@ static struct omap_bo * omap_bo_new_impl(struct omap_device *dev,
  	bo = bo_from_handle(dev, req.handle);
  	pthread_mutex_unlock(&table_lock);
  
@@ -36,6 +36,3 @@ index 08ba64e..a6f8a21 100644
  
  	return bo;
  
--- 
-2.7.4
-

@@ -1,4 +1,4 @@
-From 035ea52b3c9f8b9d4d82c78e2e5f9d974da4d018 Mon Sep 17 00:00:00 2001
+From 115aa882abeb6db92c7588f3fb0953593fa2f634 Mon Sep 17 00:00:00 2001
 From: Alejandro Hernandez <ajhernandez@ti.com>
 Date: Tue, 3 Mar 2020 09:52:06 -0500
 Subject: [PATCH] Add option to run a test indefinitely
@@ -13,16 +13,15 @@ Upstream-Status: Pending
 
 Signed-off-by: Alejandro Hernandez <ajhernandez@ti.com>
 Signed-off-by: Denys Dmytriyenko <denis@denix.org>
-
 ---
  tests/modetest/modetest.c | 12 ++++++++----
  1 file changed, 8 insertions(+), 4 deletions(-)
 
 diff --git a/tests/modetest/modetest.c b/tests/modetest/modetest.c
-index fc75383..8e59acc 100644
+index d9e761e..687f7a4 100644
 --- a/tests/modetest/modetest.c
 +++ b/tests/modetest/modetest.c
-@@ -1767,7 +1767,7 @@ static void clear_cursors(struct device *dev)
+@@ -1887,7 +1887,7 @@ static void clear_cursors(struct device *dev)
  		bo_destroy(dev->mode.cursor_bo);
  }
  
@@ -31,7 +30,7 @@ index fc75383..8e59acc 100644
  {
  	unsigned int other_fb_id;
  	struct bo *other_bo;
-@@ -1825,7 +1825,7 @@ static void test_page_flip(struct device *dev, struct pipe_arg *pipes, unsigned
+@@ -1945,7 +1945,7 @@ static void test_page_flip(struct device *dev, struct pipe_arg *pipes, unsigned
  		fd_set fds;
  
  		FD_ZERO(&fds);
@@ -40,7 +39,7 @@ index fc75383..8e59acc 100644
  		FD_SET(dev->fd, &fds);
  		ret = select(dev->fd + 1, &fds, NULL, NULL, &timeout);
  
-@@ -2032,7 +2032,7 @@ static void usage(char *name)
+@@ -2179,7 +2179,7 @@ static void usage(char *name)
  	exit(0);
  }
  
@@ -49,7 +48,7 @@ index fc75383..8e59acc 100644
  
  int main(int argc, char **argv)
  {
-@@ -2049,6 +2049,7 @@ int main(int argc, char **argv)
+@@ -2196,6 +2196,7 @@ int main(int argc, char **argv)
  	char *module = NULL;
  	unsigned int i;
  	unsigned int count = 0, plane_count = 0;
@@ -57,7 +56,7 @@ index fc75383..8e59acc 100644
  	unsigned int prop_count = 0;
  	struct pipe_arg *pipe_args = NULL;
  	struct plane_arg *plane_args = NULL;
-@@ -2148,6 +2149,9 @@ int main(int argc, char **argv)
+@@ -2299,6 +2300,9 @@ int main(int argc, char **argv)
  
  			prop_count++;
  			break;
@@ -67,7 +66,7 @@ index fc75383..8e59acc 100644
  		default:
  			usage(argv[0]);
  			break;
-@@ -2275,7 +2279,7 @@ int main(int argc, char **argv)
+@@ -2449,7 +2453,7 @@ int main(int argc, char **argv)
  				set_cursors(&dev, pipe_args, count);
  
  			if (test_vsync)

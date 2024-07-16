@@ -1,7 +1,7 @@
-From 2473eabe24af25dd2127c5e84048f90e4ded000c Mon Sep 17 00:00:00 2001
+From 9810d176a7947a6e8f432e1610da15937765fa06 Mon Sep 17 00:00:00 2001
 From: Tomi Valkeinen <tomi.valkeinen@ti.com>
 Date: Thu, 18 May 2017 10:37:11 +0300
-Subject: [PATCH 2/2] omap: add OMAP_BO flags to affect buffer allocation
+Subject: [PATCH] omap: add OMAP_BO flags to affect buffer allocation
 
 Import the kernel header changes from "drm/omap: add OMAP_BO flags to
 affect buffer allocation".
@@ -54,6 +54,3 @@ index 9c6c0e4..d991b85 100644
  
  /* cache modes */
  #define OMAP_BO_CACHED		0x00000000	/* default */
--- 
-2.7.4
-
