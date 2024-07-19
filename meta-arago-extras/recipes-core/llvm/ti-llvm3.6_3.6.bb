@@ -72,6 +72,10 @@ do_compile:class-native() {
 }
 
 do_compile:class-nativesdk() {
+    # Fix for buildpaths error referring to TMPDIR
+    sed -i 's:@LLVM_SRC_ROOT@::g' ${S}/tools/llvm-config/BuildVariables.inc.in
+    sed -i 's:@LLVM_OBJ_ROOT@::g' ${S}/tools/llvm-config/BuildVariables.inc.in
+
     cd ${LLVM_BUILD_DIR}
 
     # Fix libdir for multilib
