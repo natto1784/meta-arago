@@ -121,22 +121,6 @@ fakeroot python do_rootfs () {
     create_rootfs(d)
 }
 
-fakeroot python do_image () {
-    from oe.utils import execute_pre_post_process
-
-    pre_process_cmds = d.getVar("IMAGE_PREPROCESS_COMMAND")
-
-    execute_pre_post_process(d, pre_process_cmds)
-}
-
-fakeroot python do_image_complete () {
-    from oe.utils import execute_pre_post_process
-
-    post_process_cmds = d.getVar("IMAGE_POSTPROCESS_COMMAND")
-
-    execute_pre_post_process(d, post_process_cmds)
-}
-
 tisdk_image_setup () {
     set -x
     rm -rf ${IMAGE_ROOTFS}
