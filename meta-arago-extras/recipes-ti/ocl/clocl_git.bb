@@ -33,3 +33,11 @@ do_install() {
 
 RDEPENDS:${PN} += "ti-cgt6x"
 BBCLASSEXTEND = "native nativesdk"
+
+# Disable the "buildpaths" check while we figure out how we are
+# going to address this issue.
+#
+# The ti-llvm3.6 compiler is a custom TI compiler that has not
+# been updated for a number of years.  It does not currently
+# support reproducible builds.
+INSANE_SKIP:${PN} += "buildpaths"
