@@ -11,6 +11,7 @@ MULTIMEDIA = " \
     ffmpeg \
     libcamera \
     libcamera-gst \
+    mpv \
 "
 
 MULTIMEDIA:omapl138 = ""
