@@ -10,6 +10,7 @@ SDK_PACKAGE_ARCHS += "buildtools-dummy-${SDKPKGSUFFIX}"
 
 inherit toolchain-scripts
 inherit tisdk-sw-manifest
+inherit nopackages
 
 require recipes-core/meta/meta-toolchain.bb
 
