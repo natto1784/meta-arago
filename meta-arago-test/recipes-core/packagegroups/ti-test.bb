@@ -11,6 +11,7 @@ TI_TEST_BASE = "\
     bonnie++ \
     bridge-utils \
     cryptodev-tests \
+    devmem2 \
     dma-heap-tests \
     dosfstools \
     ethtool \
