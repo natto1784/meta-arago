@@ -11,7 +11,6 @@ EXTRA_TI_TOOLS = " \
     nativesdk-ti-cgt6x \
     nativesdk-ti-cgt-pru \
     nativesdk-clocl \
-    ${@oe.utils.all_distro_features(d, "opencl openmp", "nativesdk-clacc")} \
     nativesdk-open62541-examples \
     nativesdk-open62541-tests \
     nativesdk-gcc-arm-baremetal \
