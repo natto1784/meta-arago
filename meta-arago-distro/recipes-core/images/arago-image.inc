@@ -23,7 +23,6 @@ SDK_PACKAGE_ARCHS += "buildtools-dummy-${SDKPKGSUFFIX}"
 
 BAD_RECOMMENDATIONS += " \
     ti-llvm3.6-dev \
-    opencl-monitor-dev \
     libulm-dev \
     gdbserver-c6x-dev \
     coreutils \
