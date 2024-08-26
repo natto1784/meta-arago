@@ -38,23 +38,15 @@ PDM_ANOMALY_PKG_DEV = "\
 
 EXTRA_PACKAGES = ""
 #EXTRA_PACKAGES:append:ti33x = " \
-#                                tensorflow-lite-dev \
-#                                tensorflow-lite-staticdev \
 #                                ${PDM_ANOMALY_PKG_DEV} \
 #"
 #EXTRA_PACKAGES:append:ti43x = " \
-#                                tensorflow-lite-dev \
-#                                tensorflow-lite-staticdev \
 #                                ${PDM_ANOMALY_PKG_DEV} \
 #"
 #EXTRA_PACKAGES:append:omap-a15 = " \
-#                                tensorflow-lite-dev \
-#                                tensorflow-lite-staticdev \
 #                                ${PDM_ANOMALY_PKG_DEV} \
 #"
 #EXTRA_PACKAGES:append:am65xx = " \
-#                             tensorflow-lite-dev \
-#                             tensorflow-lite-staticdev \
 #                             ${PDM_ANOMALY_PKG_DEV} \
 #"
 
