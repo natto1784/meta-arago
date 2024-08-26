@@ -7,13 +7,6 @@ inherit_defer nativesdk
 
 PACKAGEGROUP_DISABLE_COMPLEMENTARY = "1"
 
-TIDL_TOOLS = ""
-#TIDL_TOOLS = " \
-#    nativesdk-tidl-import \
-#    nativesdk-tidl-viewer \
-#    nativesdk-tidl-utils \
-#"
-
 EXTRA_TI_TOOLS = " \
     nativesdk-ti-cgt6x \
     nativesdk-ti-cgt-pru \
@@ -22,7 +15,6 @@ EXTRA_TI_TOOLS = " \
     nativesdk-open62541-examples \
     nativesdk-open62541-tests \
     nativesdk-gcc-arm-baremetal \
-    ${@oe.utils.all_distro_features(d, "opencl opencv", "${TIDL_TOOLS}")} \
 "
 
 RDEPENDS:${PN} = "\
