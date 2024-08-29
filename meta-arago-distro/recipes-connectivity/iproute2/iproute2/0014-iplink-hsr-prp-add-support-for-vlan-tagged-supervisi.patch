@@ -23,10 +23,10 @@ diff --git a/include/uapi/linux/if_link.h b/include/uapi/linux/if_link.h
 index de08704c5862..94a381769e5a 100644
 --- a/include/uapi/linux/if_link.h
 +++ b/include/uapi/linux/if_link.h
-@@ -901,6 +901,9 @@ enum {
- 	IFLA_HSR_PROTOCOL,		/* Indicate different protocol than
+@@ -1772,6 +1772,9 @@ enum {
  					 * HSR. For example PRP.
  					 */
+	IFLA_HSR_INTERLINK,		/* HSR interlink network device */
 +	IFLA_HSR_SV_VID,		/* Supervision frames VLAN ID */
 +	IFLA_HSR_SV_DEI,		/* Supervision frames VLAN DEI */
 +	IFLA_HSR_SV_PCP,		/* Supervision frames VLAN PCP */
@@ -34,18 +34,18 @@ index de08704c5862..94a381769e5a 100644
  };
  
 diff --git a/ip/iplink_hsr.c b/ip/iplink_hsr.c
-index 6ea138a23cbc..f38c752c0065 100644
+index 42adb430..d7fbbd62 100644
 --- a/ip/iplink_hsr.c
 +++ b/ip/iplink_hsr.c
-@@ -26,6 +26,7 @@ static void print_usage(FILE *f)
- 	fprintf(f,
+@@ -23,6 +23,7 @@ static void print_usage(FILE *f)
  		"Usage:\tip link add name NAME type hsr slave1 SLAVE1-IF slave2 SLAVE2-IF\n"
- 		"\t[ supervision ADDR-BYTE ] [version VERSION] [proto PROTOCOL]\n"
+ 		"\t[ interlink INTERLINK-IF ] [ supervision ADDR-BYTE ] [ version VERSION ]\n"
+ 		"\t[ proto PROTOCOL ]\n"
 +		"\t[ sv_vid SV-VID ] [ sv_pcp SV-PCP ] [ sv_dei SV-DEI ]\n"
  		"\n"
  		"NAME\n"
  		"	name of new hsr device (e.g. hsr0)\n"
-@@ -37,7 +38,15 @@ static void print_usage(FILE *f)
+@@ -36,7 +37,15 @@ static void print_usage(FILE *f)
  		"VERSION\n"
  		"	0,1; the protocol version to be used. (default = 0)\n"
  		"PROTOCOL\n"
@@ -62,7 +62,7 @@ index 6ea138a23cbc..f38c752c0065 100644
  }
  
  static void usage(void)
-@@ -52,6 +61,9 @@ static int hsr_parse_opt(struct link_util *lu, int argc, char **argv,
+@@ -51,6 +60,9 @@ static int hsr_parse_opt(struct link_util *lu, int argc, char **argv,
  	unsigned char multicast_spec;
  	unsigned char protocol_version;
  	unsigned char protocol = HSR_PROTOCOL_HSR;
@@ -72,10 +72,10 @@ index 6ea138a23cbc..f38c752c0065 100644
  
  	while (argc > 0) {
  		if (matches(*argv, "supervision") == 0) {
-@@ -86,6 +98,32 @@ static int hsr_parse_opt(struct link_util *lu, int argc, char **argv,
+@@ -91,6 +103,31 @@ static int hsr_parse_opt(struct link_util *lu, int argc, char **argv,
  			if (ifindex == 0)
  				invarg("No such interface", *argv);
- 			addattr_l(n, 1024, IFLA_HSR_SLAVE2, &ifindex, 4);
+ 			addattr_l(n, 1024, IFLA_HSR_INTERLINK, &ifindex, 4);
 +		} else if (matches(*argv, "sv_vid") == 0) {
 +			NEXT_ARG();
 +			if (get_u16(&sv_vid, *argv, 0))
@@ -101,7 +101,6 @@ index 6ea138a23cbc..f38c752c0065 100644
 +				invarg("SV-DEI is invalid", *argv);
 +			addattr_l(n, 1024, IFLA_HSR_SV_DEI,
 +				  &sv_dei, sizeof(sv_dei));
-+
  		} else if (matches(*argv, "help") == 0) {
  			usage();
  			return -1;
