@@ -19,3 +19,7 @@ PREFERRED_PROVIDER_wpa-supplicant = "wpa-supplicant"
 #PREFERRED_PROVIDER_wpa-supplicant:ti33x = "wpa-supplicant-wl18xx"
 #PREFERRED_PROVIDER_wpa-supplicant:ti43x = "wpa-supplicant-wl18xx"
 #PREFERRED_PROVIDER_wpa-supplicant:omap-a15 = "wpa-supplicant-wl18xx"
+
+# Set preferred version for Xen
+PREFERRED_VERSION:pn-xen = "4.19+stable"
+PREFERRED_VERSION:pn-xen-tools = "4.19+stable"
